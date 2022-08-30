@@ -52,8 +52,7 @@ const EditPrices = ({ close, id }) => {
                 </Tooltip>
               </div>
               <span className="inter-base-regular text-grey-50">
-                You will be able to override the prices for the products you add
-                here
+                Będziesz mógł nadpisać ceny produktów
               </span>
             </div>
             <ProductPrices
@@ -74,14 +73,14 @@ const EditPrices = ({ close, id }) => {
 const VariantActions = (product: Product) => {
   return [
     {
-      label: "Edit prices",
+      label: "Edytuj ceny",
       icon: <EditIcon size={20} />,
       onClick: () => {
         // open grid ui
       },
     },
     {
-      label: "Remove from list",
+      label: "Usuń z listy",
       icon: <TrashIcon size={20} />,
       onClick: () => {
         // missing core support

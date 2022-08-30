@@ -135,10 +135,10 @@ function EditCustomersTable(props: EditCustomersTableProps) {
 
   const filteringOptions = [
     {
-      title: "Groups",
+      title: "Grupy",
       options: [
         {
-          title: "All",
+          title: "Wszystkie",
           onClick: () => setActiveGroupId(null),
         },
         ...(customer_groups || []).map((g) => ({
@@ -180,7 +180,7 @@ function EditCustomersTable(props: EditCustomersTableProps) {
     <Modal handleClose={onClose}>
       <Modal.Body>
         <Modal.Header handleClose={onClose}>
-          <h3 className="inter-xlarge-semibold">Edit Customers</h3>
+          <h3 className="inter-xlarge-semibold">Edytuj klientów</h3>
         </Modal.Header>
 
         <Modal.Content>
@@ -211,7 +211,7 @@ function EditCustomersTable(props: EditCustomersTableProps) {
               limit={queryObject.limit}
               offset={queryObject.offset}
               pageSize={queryObject.offset + table.rows.length}
-              title="Customers"
+              title="Klienci"
               currentPage={table.state.pageIndex + 1}
               pageCount={table.pageCount}
               nextPage={handleNext}
@@ -230,7 +230,7 @@ function EditCustomersTable(props: EditCustomersTableProps) {
               className="w-eventButton"
               onClick={onClose}
             >
-              Cancel
+              Anuluj
             </Button>
             <Button
               variant="primary"
@@ -238,7 +238,7 @@ function EditCustomersTable(props: EditCustomersTableProps) {
               className="w-eventButton"
               onClick={handleSubmit}
             >
-              Save
+              Zapisz
             </Button>
           </div>
         </Modal.Footer>

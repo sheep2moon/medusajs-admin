@@ -18,7 +18,7 @@ function Index(_: RouteComponentProps) {
 
   const actions = [
     {
-      label: "New group",
+      label: "Nowa grupa",
       onClick: showModal,
       icon: (
         <span className="text-grey-90">

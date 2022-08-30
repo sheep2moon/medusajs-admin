@@ -57,10 +57,10 @@ const CustomerOrdersTable: React.FC<CustomerOrdersTableProps> = ({
           <Table.HeadRow>
             <Table.HeadCell className="w-[75px]">Order</Table.HeadCell>
             <Table.HeadCell />
-            <Table.HeadCell>Date</Table.HeadCell>
-            <Table.HeadCell>Fulfillment</Table.HeadCell>
+            <Table.HeadCell>Data</Table.HeadCell>
+            <Table.HeadCell>Realizacja</Table.HeadCell>
             <Table.HeadCell>Status</Table.HeadCell>
-            <Table.HeadCell>Total</Table.HeadCell>
+            <Table.HeadCell>Łącznie</Table.HeadCell>
           </Table.HeadRow>
         </Table.Head>
         <Table.Body>
@@ -92,7 +92,7 @@ const CustomerOrdersTable: React.FC<CustomerOrdersTableProps> = ({
                   </div>
                   {remainder > 0 && (
                     <div className="flex items-center text-grey-40 inter-small-regular">
-                      + {remainder} more
+                      + {remainder} więcej
                     </div>
                   )}
                 </Table.Cell>

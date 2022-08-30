@@ -154,12 +154,12 @@ const CustomerTable: React.FC<RouteComponentProps> = () => {
                   color={"inherit"}
                   actions={[
                     {
-                      label: "Edit",
+                      label: "Edytuj",
                       onClick: () => navigate(row.original.id),
                       icon: <EditIcon size={20} />,
                     },
                     {
-                      label: "Details",
+                      label: "Szczegóły",
                       onClick: () => navigate(row.original.id),
                       icon: <DetailsIcon size={20} />,
                     },
@@ -185,7 +185,7 @@ const CustomerTable: React.FC<RouteComponentProps> = () => {
         limit={queryObject.limit}
         offset={queryObject.offset}
         pageSize={queryObject.offset + rows.length}
-        title="Customers"
+        title="Klienci"
         currentPage={pageIndex + 1}
         pageCount={pageCount}
         nextPage={handleNext}

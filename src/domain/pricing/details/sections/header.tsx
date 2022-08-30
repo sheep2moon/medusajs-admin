@@ -78,13 +78,13 @@ const HeadingBodyCard = ({ priceList, setIsOpen, ...props }) => {
 
   const onDelete = async () => {
     const shouldDelete = await dialog({
-      heading: "Delete Price list",
-      text: "Are you sure you want to delete this price list?",
+      heading: "Usuń cennik",
+      text: "Na pewno usunąć ten cennik?",
     })
     if (shouldDelete) {
       deletePriceList.mutate(undefined, {
         onSuccess: () => {
-          notification("Success", "Price list deleted successfully", "success")
+          notification("Sukces", "Cennik usunięty pomyślnie", "success")
           navigate("/a/pricing/")
         },
         onError: (err) => {
@@ -96,12 +96,12 @@ const HeadingBodyCard = ({ priceList, setIsOpen, ...props }) => {
 
   const actionables = [
     {
-      label: "Edit price list details",
+      label: "Edytuj szczegóły cennika",
       onClick: () => setIsOpen(true),
       icon: <EditIcon size={20} />,
     },
     {
-      label: "Delete price list",
+      label: "Usuń cennik",
       onClick: onDelete,
       variant: "danger" as const,
       icon: <TrashIcon size={20} />,

@@ -90,14 +90,14 @@ const AddProductsModal = ({
               className="rounded-rounded h-8 w-[128px]"
               onClick={close}
             >
-              Cancel
+              Anuluj
             </Button>
             <Button
               variant="primary"
               className="rounded-rounded h-8 w-[128px]"
               onClick={handleSave}
             >
-              Save
+              Zapisz
             </Button>
           </div>
         </Modal.Footer>

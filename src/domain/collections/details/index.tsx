@@ -88,10 +88,10 @@ const CollectionDetails: React.FC<RouteComponentProps> = ({ location }) => {
       }
 
       setShowAddProducts(false)
-      notification("Success", "Updated products in collection", "success")
+      notification("Sukces", "Zaktualizowano produkty w kolekcji", "success")
       refetch()
     } catch (error) {
-      notification("Error", getErrorMessage(error), "error")
+      notification("Błąd", getErrorMessage(error), "error")
     }
   }
 
@@ -105,8 +105,8 @@ const CollectionDetails: React.FC<RouteComponentProps> = ({ location }) => {
     <>
       <div className="flex flex-col h-full">
         <Breadcrumb
-          currentPage="Edit Collection"
-          previousBreadcrumb="Collections"
+          currentPage="Edytuj kolekcje"
+          previousBreadcrumb="Kolekcje"
           previousRoute="/a/products?view=collections"
         />
         <div className="rounded-rounded py-large px-xlarge border border-grey-20 bg-grey-0 mb-large">
@@ -125,12 +125,12 @@ const CollectionDetails: React.FC<RouteComponentProps> = ({ location }) => {
                     forceDropdown
                     actions={[
                       {
-                        label: "Edit Collection",
+                        label: "Edytuj kolekcje",
                         onClick: () => setShowEdit(true),
                         icon: <EditIcon size="20" />,
                       },
                       {
-                        label: "Delete",
+                        label: "Usuń",
                         onClick: () => setShowDelete(!showDelete),
                         variant: "danger",
                         icon: <TrashIcon size="20" />,
@@ -144,7 +144,7 @@ const CollectionDetails: React.FC<RouteComponentProps> = ({ location }) => {
               </div>
               {collection.metadata && (
                 <div className="mt-large flex flex-col gap-y-base">
-                  <h3 className="inter-base-semibold">Metadata</h3>
+                  <h3 className="inter-base-semibold">Metadane</h3>
                   <div>
                     <ViewRaw raw={collection.metadata} name="metadata" />
                   </div>
@@ -154,12 +154,12 @@ const CollectionDetails: React.FC<RouteComponentProps> = ({ location }) => {
           )}
         </div>
         <BodyCard
-          title="Products"
-          subtitle="To start selling, all you need is a name, price, and image."
+          title="Produkty"
+          subtitle="By zacząć sprzedawać, potrzebujesz nazwy, ceny i zdjęcia."
           className="h-full"
           actionables={[
             {
-              label: "Edit Products",
+              label: "Edytuj produkty",
               icon: <EditIcon size="20" />,
               onClick: () => setShowAddProducts(!showAddProducts),
             },
@@ -191,8 +191,8 @@ const CollectionDetails: React.FC<RouteComponentProps> = ({ location }) => {
       {showDelete && (
         <DeletePrompt
           handleClose={() => setShowDelete(!showDelete)}
-          heading="Delete collection"
-          successText="Successfully deleted collection"
+          heading="Usuń kolekcje"
+          successText="Pomyślnie usunięto kolekcje"
           onDelete={async () => handleDelete()}
           confirmText="Yes, delete"
         />

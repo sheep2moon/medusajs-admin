@@ -59,7 +59,7 @@ const ProductIndex = () => {
               onClick={() => openExportModal()}
             >
               <ExportIcon size={20} />
-              Export Products
+              Eksportuj produkty
             </Button>
             <Button
               variant="secondary"
@@ -67,7 +67,7 @@ const ProductIndex = () => {
               onClick={() => navigate(`/a/products/new`)}
             >
               <PlusIcon size={20} />
-              New Product
+              Nowy produkt
             </Button>
           </div>
         )
@@ -80,7 +80,7 @@ const ProductIndex = () => {
               onClick={() => setShowNewCollection(!showNewCollection)}
             >
               <PlusIcon size={20} />
-              New Collection
+              Nowa kolekcja
             </Button>
           </div>
         )
@@ -108,11 +108,11 @@ const ProductIndex = () => {
       { ...data, metadata },
       {
         onSuccess: ({ collection }) => {
-          notification("Success", "Successfully created collection", "success")
+          notification("Sukces", "Pomyślnie stworzono kolekcje", "success")
           navigate(`/a/collections/${collection.id}`)
           setShowNewCollection(false)
         },
-        onError: (err) => notification("Error", getErrorMessage(err), "error"),
+        onError: (err) => notification("Błąd", getErrorMessage(err), "error"),
       }
     )
   }
@@ -125,10 +125,10 @@ const ProductIndex = () => {
 
     createBatchJob.mutate(reqObj, {
       onSuccess: () => {
-        notification("Success", "Successfully initiated export", "success")
+        notification("Sukces", "Pomyślnie rozpoczęto eksport", "success")
       },
       onError: (err) => {
-        notification("Error", getErrorMessage(err), "error")
+        notification("Błąd", getErrorMessage(err), "error")
       },
     })
 
@@ -162,7 +162,7 @@ const ProductIndex = () => {
       )}
       {exportModalOpen && (
         <ExportModal
-          title="Export Products"
+          title="Exportuj produkty"
           handleClose={() => closeExportModal()}
           onSubmit={handleCreateExport}
           loading={createBatchJob.isLoading}

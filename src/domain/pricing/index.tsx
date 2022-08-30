@@ -11,7 +11,7 @@ import PricingTable from "./pricing-table"
 const PricingIndex: React.FC<RouteComponentProps> = () => {
   const actionables = [
     {
-      label: "Add price list",
+      label: "Dodaj cennik",
       onClick: () => navigate(`/a/pricing/new`),
       icon: <PlusIcon size={20} />,
     },

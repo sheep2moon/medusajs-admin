@@ -32,12 +32,12 @@ const CustomerDetail: React.FC<CustomerDetailProps> = ({ id }) => {
 
   const actions = [
     {
-      label: "Edit",
+      label: "Edytuj",
       onClick: () => setShowEdit(true),
       icon: <EditIcon size={20} />,
     },
     {
-      label: "Delete (not implemented yet)",
+      label: "Usuń (jeszcze nie działa)",
       onClick: () => console.log("TODO: delete customer"),
       variant: "danger",
       icon: <TrashIcon size={20} />,
@@ -47,8 +47,8 @@ const CustomerDetail: React.FC<CustomerDetailProps> = ({ id }) => {
   return (
     <div>
       <Breadcrumb
-        currentPage={"Customer Details"}
-        previousBreadcrumb={"Customers"}
+        currentPage={"Szczególy klienta"}
+        previousBreadcrumb={"Klienci"}
         previousRoute="/a/customers"
       />
       <BodyCard className={"h-auto w-full pt-[100px] mb-4 relative"}>
@@ -74,7 +74,7 @@ const CustomerDetail: React.FC<CustomerDetailProps> = ({ id }) => {
         <div className="flex mt-6 space-x-6 divide-x">
           <div className="flex flex-col">
             <div className="inter-smaller-regular text-grey-50 mb-1">
-              First seen
+              Stworzono
             </div>
             <div>{moment(customer?.created_at).format("DD MMM YYYY")}</div>
           </div>
@@ -86,7 +86,7 @@ const CustomerDetail: React.FC<CustomerDetailProps> = ({ id }) => {
           </div>
           <div className="flex flex-col pl-6">
             <div className="inter-smaller-regular text-grey-50 mb-1">
-              Orders
+              Zamówienia
             </div>
             <div>{customer?.orders.length}</div>
           </div>
@@ -102,8 +102,8 @@ const CustomerDetail: React.FC<CustomerDetailProps> = ({ id }) => {
         </div>
       </BodyCard>
       <BodyCard
-        title={`Orders (${customer?.orders.length})`}
-        subtitle="An overview of Customer Orders"
+        title={`Zamówienia (${customer?.orders.length})`}
+        subtitle="Przegląd zamówień klienta"
       >
         {isLoading || !customer ? (
           <div className="w-full pt-2xlarge flex items-center justify-center">
@@ -116,7 +116,7 @@ const CustomerDetail: React.FC<CustomerDetailProps> = ({ id }) => {
         )}
       </BodyCard>
       <div className="mt-large">
-        <RawJSON data={customer} title="Raw customer" />
+        <RawJSON data={customer} title="klient-raw" />
       </div>
 
       {showEdit && (

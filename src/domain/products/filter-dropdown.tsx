@@ -134,7 +134,7 @@ const ProductsFilter = ({
           setFilter={(v) => setSingleFilter("status", v)}
         />
         <FilterDropdownItem
-          filterTitle="Collection"
+          filterTitle="Kolekcja"
           options={
             collections?.map((c) => ({ value: c.id, label: c.title })) || []
           }
@@ -195,7 +195,7 @@ const ProductsFilter = ({
               <TagInput
                 className="pt-0 pb-1"
                 showLabel={false}
-                placeholder="Spring, summer..."
+                placeholder="Wiosna, lato..."
                 values={(tempState.tags.filter || [])
                   .map((t) => {
                     const found = (product_tags || []).find((pt) => pt.id === t)

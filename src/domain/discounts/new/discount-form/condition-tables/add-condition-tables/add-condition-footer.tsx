@@ -35,7 +35,7 @@ const AddConditionFooter: React.FC<AddConditionFooterProps> = ({
           reset()
         }}
       >
-        Cancel
+        Anuluj
       </Button>
       <Button
         variant="primary"
@@ -49,7 +49,7 @@ const AddConditionFooter: React.FC<AddConditionFooterProps> = ({
           pop()
         }}
       >
-        Save and add more
+        Zapisz i dodaj więcej
       </Button>
       <Button
         variant="primary"
@@ -60,7 +60,7 @@ const AddConditionFooter: React.FC<AddConditionFooterProps> = ({
           reset()
         }}
       >
-        Save and close
+        Zapisz i zamknij
       </Button>
     </div>
   )

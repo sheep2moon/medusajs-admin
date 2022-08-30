@@ -59,10 +59,10 @@ const useCopyPromotion = () => {
     await createPromotion.mutate(copy, {
       onSuccess: (result) => {
         navigate(`/a/discounts/${result.discount.id}`)
-        notification("Success", "Successfully copied discount", "success")
+        notification("Sukces", "Pomyślnie skopiowano zniżke", "success")
       },
       onError: (err) => {
-        notification("Error", getErrorMessage(err), "error")
+        notification("Bląd", getErrorMessage(err), "error")
       },
     })
   }

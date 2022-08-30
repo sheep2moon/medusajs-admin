@@ -38,9 +38,7 @@ const defaultQueryProps = {
 function CustomersListPlaceholder() {
   return (
     <div className="h-full flex center justify-center items-center min-h-[756px]">
-      <span className="text-xs text-gray-400">
-        No customers in this group yet
-      </span>
+      <span className="text-xs text-gray-400">Brak klientów w tej grupie</span>
     </div>
   )
 }
@@ -85,7 +83,7 @@ function CustomerGroupCustomersList(props: CustomerGroupCustomersListProps) {
 
   const actions = [
     {
-      label: "Edit customers",
+      label: "Edytuj klientów",
       onClick: () => setShowCustomersModal(true),
       icon: (
         <span className="text-grey-90">
@@ -124,7 +122,7 @@ function CustomerGroupCustomersList(props: CustomerGroupCustomersListProps) {
 
   return (
     <BodyCard
-      title="Customers"
+      title="Klienci"
       actionables={actions}
       className="min-h-0 w-full my-4 min-h-[756px]"
     >
@@ -172,12 +170,12 @@ function CustomerGroupDetailsHeader(props: CustomerGroupDetailsHeaderProps) {
 
   const actions = [
     {
-      label: "Edit",
+      label: "Edytuj",
       onClick: showModal,
       icon: <EditIcon size={20} />,
     },
     {
-      label: "Delete",
+      label: "Usuń",
       onClick: () => {
         setShowDeleteConfirmation(true)
       },
@@ -205,10 +203,10 @@ function CustomerGroupDetailsHeader(props: CustomerGroupDetailsHeaderProps) {
         <DeletePrompt
           onDelete={onDeleteConfirmed}
           handleClose={handleConfirmDialogClose}
-          confirmText="Yes, delete"
-          heading="Delete the group"
-          successText="Group deleted"
-          text="Are you sure you want to delete this customer group?"
+          confirmText="Tak, usuń"
+          heading="Usuń grupe"
+          successText="Grupa usunięta"
+          text="Na pewno usunąć tę grupę klientów?"
         />
       )}
     </>
@@ -231,8 +229,8 @@ function CustomerGroupDetails(p: CustomerGroupDetailsProps) {
     <CustomerGroupContextContainer group={customer_group}>
       <div className="-mt-4 pb-4">
         <Breadcrumb
-          currentPage={customer_group ? customer_group.name : "Customer Group"}
-          previousBreadcrumb="Groups"
+          currentPage={customer_group ? customer_group.name : "Grupa klienta"}
+          previousBreadcrumb="Grupy"
           previousRoute="/a/customers/groups"
         />
         <CustomerGroupDetailsHeader customerGroup={customer_group} />

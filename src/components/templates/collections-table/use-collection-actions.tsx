@@ -12,8 +12,8 @@ const useCollectionActions = (collection) => {
 
   const handleDelete = async () => {
     const shouldDelete = await dialog({
-      heading: "Delete Collection",
-      text: "Are you sure you want to delete this collection?",
+      heading: "Usuń kolekcje",
+      text: "Czy na pewno usunąć tę kolekcję?",
     })
 
     if (shouldDelete) {
@@ -23,12 +23,12 @@ const useCollectionActions = (collection) => {
 
   const getActions = (coll): ActionType[] => [
     {
-      label: "Edit",
+      label: "Edytuj",
       onClick: () => navigate(`/a/collections/${coll.id}`),
       icon: <EditIcon size={20} />,
     },
     {
-      label: "Delete",
+      label: "Usuń",
       variant: "danger",
       onClick: handleDelete,
       icon: <TrashIcon size={20} />,

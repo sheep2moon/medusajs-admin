@@ -29,12 +29,9 @@ const Prices = ({ currencyCodes, defaultCurrencyCode, defaultAmount }) => {
   )
 
   return (
-    <BodyCard
-      title="Pricing"
-      subtitle="Give products a price for each of the currencies that you sell in"
-    >
+    <BodyCard title="Ceny" subtitle="Nadaj produktowi cenę w róznych walutach">
       <div className="mt-base">
-        <h6 className="inter-base-semibold text-grey-90 mr-1.5">Prices</h6>
+        <h6 className="inter-base-semibold text-grey-90 mr-1.5">Ceny</h6>
 
         <div className="max-w-[630px]">
           {fields.map((field, index) => {
@@ -67,7 +64,7 @@ const Prices = ({ currencyCodes, defaultCurrencyCode, defaultAmount }) => {
                           }
                         >
                           <CurrencyInput.AmountInput
-                            label="Amount"
+                            label="Wartość"
                             onChange={(amount) =>
                               onChange({ ...value, amount })
                             }
@@ -99,7 +96,7 @@ const Prices = ({ currencyCodes, defaultCurrencyCode, defaultAmount }) => {
               disabled={availableCurrencies?.length === 0}
             >
               <PlusIcon size={20} />
-              Add a price
+              Dodaj cenę
             </Button>
           </div>
         </div>

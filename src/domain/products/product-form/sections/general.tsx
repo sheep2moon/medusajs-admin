@@ -66,32 +66,31 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
       subtitle="To start selling, all you need is a name, price, and image"
     >
       <div className="mt-large">
-        <h6 className="inter-base-semibold mb-1">Details</h6>
+        <h6 className="inter-base-semibold mb-1">Szczegóły</h6>
         <label
           htmlFor="name"
           className="inter-small-regular text-grey-50 block max-w-[370px] mb-base"
         >
-          Give your product a short and clear name. 50-60 characters is the
-          recommended length for search engines.
+          Nadaj krótką i prostą nazwę. 50-60 najlepiej.
         </label>
         <div className="flex gap-8 mb-base">
           <Input
             id="name"
-            label="Name"
+            label="Nazwa"
             name="title"
-            placeholder="Jacket, Sunglasses..."
+            placeholder="Czapka, okulary..."
             required
             ref={register({
-              required: "Name is required",
+              required: "Nazwa wymagana",
               minLength: 1,
               pattern: /(.|\s)*\S(.|\s)*/,
             })}
           />
           <Input
-            tooltipContent="Handles are human friendly unique identifiers that are appropriate for URL slugs."
+            tooltipContent="Czytelne identyfikatory używane w linku. Musi być unikalny"
             label="Handle"
             name="handle"
-            placeholder="bathrobe"
+            placeholder="majtki-cottonworld-classic"
             prefix="/"
             ref={register()}
           />
@@ -100,15 +99,14 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
           className="inter-small-regular text-grey-50 block max-w-[370px] mb-base"
           htmlFor="description"
         >
-          Give your product a short and clear description. 120-160 characters is
-          the recommended length for search engines.
+          Krótki i prosty opis produktu. 120-160 najlepiej.
         </label>
         <div className="grid grid-rows-3 grid-cols-2 gap-x-8 gap-y-4 mb-large">
           <Textarea
             name="description"
             id="description"
-            label="Description"
-            placeholder="Short description of the product..."
+            label="Opis"
+            placeholder="Krótki opis produktu..."
             className="row-span-full"
             rows={8}
             ref={register}
@@ -116,9 +114,9 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
           <Controller
             as={Select}
             control={control}
-            label="Collection"
+            label="Kolekcja"
             name="collection"
-            placeholder="Select collection..."
+            placeholder="Wybierz kolekcje..."
             options={collectionOptions}
             clearSelected
           />
@@ -128,8 +126,8 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
             render={({ value, onChange }) => {
               return (
                 <Select
-                  label="Type"
-                  placeholder="Select type..."
+                  label="Typ"
+                  placeholder="Wybierz typ..."
                   options={typeOptions}
                   onChange={onChange}
                   value={value}
@@ -147,8 +145,8 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
             render={({ onChange, value }) => {
               return (
                 <TagInput
-                  label="Tags (separated by comma)"
-                  placeholder="Spring, Summer..."
+                  label="Tagi (oddzielone przecinkiem)"
+                  placeholder="Wiosna, lato..."
                   onChange={onChange}
                   values={value || []}
                 />
@@ -158,10 +156,10 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
           />
         </div>
         <div className="flex item-center gap-x-1.5 mb-xlarge">
-          <Checkbox name="discountable" ref={register} label="Discountable" />
+          <Checkbox name="discountable" ref={register} label="Zniżkowy" />
           <IconTooltip
             content={
-              "When unchecked discounts will not be applied to this product"
+              "Gdy odznaczone zniżki nie będą stosowane do tego produktu"
             }
           />
         </div>
@@ -172,11 +170,11 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
             className="flex items-center gap-4 mt-xlarge"
           >
             <RadioGroup.SimpleItem
-              label="Simple product"
+              label="Prosty produkt"
               value={SINGLE_PRODUCT_VIEW}
             />
             <RadioGroup.SimpleItem
-              label="Product with variants"
+              label="Produkt z wariantami"
               value={VARIANTS_VIEW}
             />
           </RadioGroup.Root>
@@ -195,13 +193,13 @@ const GeneralBodyCard = ({ isEdit, product, ...props }) => {
 
   const onDelete = async () => {
     const shouldDelete = await dialog({
-      heading: "Delete Product",
-      text: "Are you sure you want to delete this product",
+      heading: "Usuń produkt",
+      text: "Na pewno chcesz usunąć ten produkt",
     })
     if (shouldDelete) {
       deleteProduct.mutate(undefined, {
         onSuccess: () => {
-          notification("Success", "Product deleted successfully", "success")
+          notification("Sukces", "Produkt pomyślnie usunięty", "success")
           navigate("/a/products/")
         },
         onError: (err) => {
@@ -219,12 +217,9 @@ const GeneralBodyCard = ({ isEdit, product, ...props }) => {
       },
       {
         onSuccess: () => {
-          const pastTense = newStatus === "published" ? "published" : "drafted"
-          notification(
-            "Success",
-            `Product ${pastTense} successfully`,
-            "success"
-          )
+          const pastTense =
+            newStatus === "published" ? "opublikowany" : "zachowany jako"
+          notification("Sukces", `Produkt ${pastTense} pomyślnie`, "success")
         },
         onError: (err) => {
           notification("Ooops", getErrorMessage(err), "error")
@@ -235,7 +230,7 @@ const GeneralBodyCard = ({ isEdit, product, ...props }) => {
 
   const actionables = [
     {
-      label: "Delete Product",
+      label: "Usuń produkt",
       onClick: onDelete,
       variant: "danger" as const,
       icon: <TrashIcon />,
@@ -250,8 +245,8 @@ const GeneralBodyCard = ({ isEdit, product, ...props }) => {
         isEdit ? (
           <StatusSelector
             isDraft={product?.status === "draft"}
-            activeState="Published"
-            draftState="Draft"
+            activeState="Opublikowany"
+            draftState="Plan"
             onChange={onStatusChange}
           />
         ) : undefined

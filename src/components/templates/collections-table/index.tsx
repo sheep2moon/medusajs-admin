@@ -86,10 +86,10 @@ const CollectionsTable: React.FC = () => {
   useEffect(() => {
     setFilteringOptions([
       {
-        title: "Sort",
+        title: "Sortuj",
         options: [
           {
-            title: "All",
+            title: "Wszystko",
             count: collections?.length || 0,
             onClick: () => console.log("Not implemented yet"),
           },
@@ -103,7 +103,7 @@ const CollectionsTable: React.FC = () => {
       <Table
         enableSearch
         handleSearch={handleSearch}
-        searchPlaceholder="Search Collections"
+        searchPlaceholder="Szukaj kolekcji"
         filteringOptions={filteringOptions}
         {...getTableProps()}
       >
@@ -139,7 +139,7 @@ const CollectionsTable: React.FC = () => {
         limit={limit}
         offset={offset}
         pageSize={offset + rows.length}
-        title="Collections"
+        title="Kolekcje"
         currentPage={pageIndex + 1}
         pageCount={pageCount}
         nextPage={handleNext}

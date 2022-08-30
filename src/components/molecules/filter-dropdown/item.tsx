@@ -134,7 +134,7 @@ const FilterDropdownItem = ({
                 onClick={handlePrev}
                 className="font-semibold hover:text-violet-60 text-grey-90"
               >
-                Back
+                Wstecz
               </button>
             </div>
           )}
@@ -204,7 +204,7 @@ const FilterDropdownItem = ({
                 onClick={handleNext}
                 className="font-semibold hover:text-violet-60 text-grey-90"
               >
-                Show more
+                Pokaż więcej
               </button>
             </div>
           )}

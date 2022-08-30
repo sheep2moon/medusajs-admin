@@ -47,10 +47,10 @@ const Configuration: React.FC<ConfigurationProps> = () => {
   return (
     <Accordion.Item
       forceMountContent
-      title="Configuration"
-      tooltip="Optional configuration for the price list"
+      title="Konfiguracja"
+      tooltip="Opcjonalna konfiguracja cennika"
       value="configuration"
-      description="The price overrides apply from the time you hit the publish button and forever if left untouched."
+      description="Ceny zostaną nadpisane po opublikowaniu cennika na zawsze."
     >
       <Accordion
         type="multiple"
@@ -65,8 +65,8 @@ const Configuration: React.FC<ConfigurationProps> = () => {
             headingSize="medium"
             forceMountContent
             className="border-b-0"
-            title="Price overrides has a start date?"
-            subtitle="Schedule the price overrides to activate in the future."
+            title="Nadpisanie cen ma date startu?"
+            subtitle="Zaplanuj zmianę cen na przyszłość."
             value="starts_at"
             customTrigger={
               <Switch checked={openItems.indexOf("starts_at") > -1} />
@@ -88,12 +88,12 @@ const Configuration: React.FC<ConfigurationProps> = () => {
                     <>
                       <DatePicker
                         date={value}
-                        label="Start date"
+                        label="Data startu"
                         onSubmitDate={onChange}
                       />
                       <TimePicker
                         date={value}
-                        label="Start date"
+                        label="Data startu"
                         onSubmitDate={onChange}
                       />
                     </>
@@ -106,8 +106,8 @@ const Configuration: React.FC<ConfigurationProps> = () => {
             headingSize="medium"
             forceMountContent
             className="border-b-0"
-            title="Price overrides has an expiry date?"
-            subtitle="Schedule the price overrides to deactivate in the future."
+            title="Nadpisanie cen ma date końca?"
+            subtitle="Zaplanuj koniec zmiany cen w przyszłości."
             value="ends_at"
             customTrigger={
               <Switch checked={openItems.indexOf("ends_at") > -1} />
@@ -129,12 +129,12 @@ const Configuration: React.FC<ConfigurationProps> = () => {
                     <>
                       <DatePicker
                         date={value}
-                        label="End date"
+                        label="Data końca"
                         onSubmitDate={onChange}
                       />
                       <TimePicker
                         date={value}
-                        label="End date"
+                        label="Data końca"
                         onSubmitDate={onChange}
                       />
                     </>
@@ -147,8 +147,8 @@ const Configuration: React.FC<ConfigurationProps> = () => {
             headingSize="medium"
             forceMountContent
             className="border-b-0"
-            title="Customer availabilty"
-            subtitle="Specifiy which customer groups the price overrides should apply for."
+            title="Dostępność dla klientów"
+            subtitle="Ustal które grupy klientów mają dostęp do tego cennika."
             value="customer_groups"
             customTrigger={
               <Switch checked={openItems.indexOf("customer_groups") > -1} />
@@ -170,7 +170,7 @@ const Configuration: React.FC<ConfigurationProps> = () => {
                   >
                     <Select
                       value={value}
-                      label="Customer Groups"
+                      label="Grupy klientów"
                       onChange={onChange}
                       isMultiSelect
                       fullWidth

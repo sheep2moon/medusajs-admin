@@ -43,7 +43,7 @@ export const useGroupColumns = () => {
       {
         Header: () => (
           <div className="flex items-center gap-1 min-w-[540px]">
-            Title <SortingIcon size={16} />
+            Tytuł <SortingIcon size={16} />
           </div>
         ),
         accessor: "name",
@@ -51,7 +51,7 @@ export const useGroupColumns = () => {
       {
         Header: () => (
           <div className="flex justify-end items-center gap-1">
-            Members <SortingIcon size={16} />
+            Członkowie <SortingIcon size={16} />
           </div>
         ),
         id: "members",

@@ -78,9 +78,9 @@ const Settings: React.FC<SettingsProps> = ({ promotion, isEdit = false }) => {
               headingSize="medium"
               forceMountContent
               className="border-b-0"
-              title="Start date"
-              subtitle="Schedule the discount to activate in the future."
-              tooltip="If you want to schedule the discount to activate in the future, you can set a start date here, otherwise the discount will be active immediately."
+              title="Data startu"
+              subtitle="Zaplanuj czas startu zniżki."
+              tooltip="Jeżeli tego nie ustawisz, zniżka będzie działać od razu."
               value="starts_at"
               customTrigger={
                 <Switch checked={openItems.indexOf("starts_at") > -1} />
@@ -104,11 +104,11 @@ const Settings: React.FC<SettingsProps> = ({ promotion, isEdit = false }) => {
                       <>
                         <DatePicker
                           date={date}
-                          label="Start date"
+                          label="Data startu"
                           onSubmitDate={onChange}
                         />
                         <TimePicker
-                          label="Start time"
+                          label="Data startu"
                           date={date}
                           onSubmitDate={onChange}
                         />
@@ -122,9 +122,9 @@ const Settings: React.FC<SettingsProps> = ({ promotion, isEdit = false }) => {
               headingSize="medium"
               forceMountContent
               className="border-b-0"
-              title="Discount has an expiry date?"
-              subtitle="Schedule the discount to deactivate in the future."
-              tooltip="If you want to schedule the discount to deactivate in the future, you can set an expiry date here."
+              title="Zniżka ma datę wygaśnięcia?"
+              subtitle="Zaplanuj czas wygaśnięcia zniżki."
+              tooltip="Jeżeli chcesz by zniżka wygasła w przyszłości, ustaw datę."
               value="ends_at"
               customTrigger={
                 <Switch checked={openItems.indexOf("ends_at") > -1} />
@@ -150,11 +150,11 @@ const Settings: React.FC<SettingsProps> = ({ promotion, isEdit = false }) => {
                       <>
                         <DatePicker
                           date={date}
-                          label="Expiry date"
+                          label="Data wygaśnięcia"
                           onSubmitDate={onChange}
                         />
                         <TimePicker
-                          label="Expiry time"
+                          label="Data wygaśnięcia"
                           date={date}
                           onSubmitDate={onChange}
                         />
@@ -168,9 +168,9 @@ const Settings: React.FC<SettingsProps> = ({ promotion, isEdit = false }) => {
               headingSize="medium"
               forceMountContent
               className="border-b-0"
-              title="Limit the number of redemptions?"
-              subtitle="Limit applies across all customers, not per customer."
-              tooltip="If you wish to limit the amount of times a customer can redeem this discount, you can set a limit here."
+              title="Limitowane użycie?"
+              subtitle="Limit użyć zniżki przez wszystkich użytkowników."
+              tooltip="Jeżeli chcesz ograniczyć wykorzystanie zniżki, ustaw limit możliwych użyć przez wszystkich klientów."
               value="usage_limit"
               customTrigger={
                 <Switch checked={openItems.indexOf("usage_limit") > -1} />
@@ -184,9 +184,9 @@ const Settings: React.FC<SettingsProps> = ({ promotion, isEdit = false }) => {
                 <InputField
                   name="usage_limit"
                   ref={register({ valueAsNumber: true })}
-                  label="Number of redemptions"
+                  label="Liczba użyć"
                   type="number"
-                  placeholder="5"
+                  placeholder="10"
                   min={1}
                 />
               </div>

@@ -93,12 +93,12 @@ function CustomerGroupsTableRow(props: CustomerGroupsTableRowProps) {
 
   const actions = [
     {
-      label: "Edit",
+      label: "Edytuj",
       onClick: showModal,
       icon: <EditIcon size={20} />,
     },
     {
-      label: "Details",
+      label: "Szczegóły",
       onClick: () => navigate(row.original.id),
       icon: <DetailsIcon size={20} />,
     },
@@ -217,7 +217,7 @@ function CustomerGroupsTable(props: CustomerGroupsTableProps) {
         limit={queryObject.limit}
         offset={queryObject.offset}
         pageSize={queryObject.offset + table.rows.length}
-        title="Customers"
+        title="Klienci"
         currentPage={table.state.pageIndex + 1}
         pageCount={table.pageCount}
         nextPage={handleNext}

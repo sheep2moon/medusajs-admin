@@ -15,11 +15,11 @@ export const useDiscountConditions = (discount: Discount) => {
   const removeCondition = (conditionId: string) => {
     mutate(conditionId, {
       onSuccess: () => {
-        notification("Success", "Condition removed", "success")
+        notification("Sukces", "Warunek usunięty", "success")
         refetch()
       },
       onError: (error) => {
-        notification("Error", getErrorMessage(error), "error")
+        notification("Błąd", getErrorMessage(error), "error")
       },
     })
   }
@@ -30,7 +30,7 @@ export const useDiscountConditions = (discount: Discount) => {
     description: getDescription(condition.type),
     actions: [
       {
-        label: "Delete condition",
+        label: "Usuń warunek",
         icon: <TrashIcon size={16} />,
         variant: "danger",
         onClick: () => removeCondition(condition.id),
@@ -44,29 +44,29 @@ export const useDiscountConditions = (discount: Discount) => {
 const getTitle = (type: DiscountConditionType) => {
   switch (type) {
     case DiscountConditionType.PRODUCTS:
-      return "Product"
+      return "Produkt"
     case DiscountConditionType.PRODUCT_COLLECTIONS:
-      return "Collection"
+      return "Kolekcja"
     case DiscountConditionType.PRODUCT_TAGS:
       return "Tag"
     case DiscountConditionType.PRODUCT_TYPES:
-      return "Type"
+      return "Typ"
     case DiscountConditionType.CUSTOMER_GROUPS:
-      return "Customer Group"
+      return "Grupa klientów"
   }
 }
 
 const getDescription = (type: DiscountConditionType) => {
   switch (type) {
     case DiscountConditionType.PRODUCTS:
-      return "Discount is applicable to specific products"
+      return "Zniżka zastosowana do wybranych produktów"
     case DiscountConditionType.PRODUCT_COLLECTIONS:
-      return "Discount is applicable to specific collections"
+      return "Zniżka zastosowana do wybranych kolekcji"
     case DiscountConditionType.PRODUCT_TAGS:
-      return "Discount is applicable to specific product tags"
+      return "Zniżka zastosowana do wybranych tagów"
     case DiscountConditionType.PRODUCT_TYPES:
-      return "Discount is applicable to specific product types"
+      return "Zniżka zastosowana do wybranych typów produktu"
     case DiscountConditionType.CUSTOMER_GROUPS:
-      return "Discount is applicable to specific customer groups"
+      return "Zniżka zastosowana do wybranych grup klientów"
   }
 }

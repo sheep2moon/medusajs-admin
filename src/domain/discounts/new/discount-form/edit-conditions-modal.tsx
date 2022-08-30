@@ -31,15 +31,15 @@ const EditConditionsModal: React.FC<EditConditionsModalProps> = ({
 const getTitle = (view: DiscountConditionType) => {
   switch (view) {
     case DiscountConditionType.PRODUCTS:
-      return "products"
+      return "produkty"
     case DiscountConditionType.CUSTOMER_GROUPS:
-      return "groups"
+      return "grupy"
     case DiscountConditionType.PRODUCT_TAGS:
-      return "tags"
+      return "tagi"
     case DiscountConditionType.PRODUCT_COLLECTIONS:
-      return "collections"
+      return "kolekcje"
     case DiscountConditionType.PRODUCT_TYPES:
-      return "types"
+      return "typy"
   }
 }
 

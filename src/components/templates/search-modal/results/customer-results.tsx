@@ -55,7 +55,7 @@ const CustomerResults = ({
                     }
                   )}
                 >
-                  Jump to...
+                  Skocz do...
                 </span>
               </Link>
             </li>

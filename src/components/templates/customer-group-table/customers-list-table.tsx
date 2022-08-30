@@ -82,7 +82,7 @@ function CustomersListTableRow(props: CustomersListTableRowProps) {
 
   const actions = [
     {
-      label: "Details",
+      label: "Szczegóły",
       onClick: () => navigate(`/a/customers/${row.original.id}`),
       icon: <DetailsIcon size={20} />,
     },
@@ -92,7 +92,7 @@ function CustomersListTableRow(props: CustomersListTableRowProps) {
     //   icon: <MailIcon size={20} />,
     // },
     {
-      label: "Delete from the group",
+      label: "Usuń z grupy",
       variant: "danger",
       onClick: () =>
         removeCustomers({
@@ -212,7 +212,7 @@ function CustomersListTable(props: CustomersListTableProps) {
         limit={queryObject.limit}
         offset={queryObject.offset}
         pageSize={queryObject.offset + table.rows.length}
-        title="Customer Groups"
+        title="Grupy klientów"
         currentPage={table.state.pageIndex + 1}
         pageCount={table.pageCount}
         nextPage={handleNext}

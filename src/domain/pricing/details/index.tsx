@@ -16,8 +16,8 @@ const PricingDetails = ({ id }: PricingDetailsProps) => {
   return (
     <div className="pb-xlarge">
       <Breadcrumb
-        currentPage="Edit price list"
-        previousBreadcrumb="Pricing"
+        currentPage="Edytuj cennik"
+        previousBreadcrumb="Ceny"
         previousRoute="/a/pricing"
       />
 
@@ -28,7 +28,7 @@ const PricingDetails = ({ id }: PricingDetailsProps) => {
             <PricesDetails id={price_list?.id} />
           </div>
           <div className="mt-xlarge">
-            <RawJSON data={price_list} title="Raw price list" />
+            <RawJSON data={price_list} title="Cennik-raw" />
           </div>
         </PriceListFormProvider>
       ) : null}
