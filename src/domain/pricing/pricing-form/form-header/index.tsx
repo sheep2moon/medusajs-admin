@@ -91,31 +91,31 @@ const FormHeader = (props: PriceListFormProps & { onClose?: () => void }) => {
   switch (props.viewType) {
     case ViewType.CREATE:
       mainAction = {
-        label: "Publish price list",
+        label: "Opublikuj liste cen",
         onClick: handleSubmit(onPublish),
       }
       secondaryAction = {
-        label: "Save as draft",
+        label: "Zapisz jako projekt",
         onClick: handleSubmit(onSaveAsDraft),
       }
       break
     case ViewType.EDIT_DETAILS:
       mainAction = {
-        label: "Save changes",
+        label: "Zapisz zmiany",
         onClick: handleSubmit(onUpdateDetails),
       }
       secondaryAction = {
-        label: "Cancel",
+        label: "Anuluj",
         onClick: closeForm,
       }
       break
     case ViewType.EDIT_PRICES:
       mainAction = {
-        label: "Save changes",
+        label: "Zapisz zmiany",
         onClick: handleSubmit(onUpdatePrices),
       }
       secondaryAction = {
-        label: "Cancel",
+        label: "Anuluj",
         onClick: closeForm,
       }
       break

@@ -22,7 +22,7 @@ export const RegionTaxForm = ({ region }) => {
       tax_provider_id: {
         label:
           region.tax_provider_id === null
-            ? "System Tax Provider"
+            ? "Systemowy"
             : region.tax_provider_id,
         value: region.tax_provider_id,
       },
@@ -37,7 +37,7 @@ export const RegionTaxForm = ({ region }) => {
       tax_provider_id: {
         label:
           region.tax_provider_id === null
-            ? "System Tax Provider"
+            ? "Systemowy"
             : region.tax_provider_id,
         value: region.tax_provider_id,
       },
@@ -55,7 +55,7 @@ export const RegionTaxForm = ({ region }) => {
     if (tax_providers) {
       return [
         {
-          label: "System Tax Provider",
+          label: "Systemowy",
           value: null,
         },
         ...tax_providers.map((tp) => ({
@@ -66,7 +66,7 @@ export const RegionTaxForm = ({ region }) => {
     }
     return [
       {
-        label: "System Tax Provider",
+        label: "Systemowy",
         value: null,
       },
     ]
@@ -81,13 +81,13 @@ export const RegionTaxForm = ({ region }) => {
     updateRegion.mutate(toSubmit, {
       onSuccess: () => {
         notification(
-          "Success",
-          "Region tax settings were successfully updated.",
+          "Sukces",
+          "Podatki regionu zostały zaktualizowane.",
           "success"
         )
       },
       onError: (error) => {
-        notification("Error", getErrorMessage(error), "error")
+        notification("Błąd", getErrorMessage(error), "error")
       },
     })
   }
@@ -103,7 +103,7 @@ export const RegionTaxForm = ({ region }) => {
           render={(props) => (
             <Select
               disabled={isProvidersLoading}
-              label="Tax Provider"
+              label="Dostawca podatkowy"
               options={providerOptions}
               value={props.value}
               onChange={props.onChange}
@@ -116,11 +116,11 @@ export const RegionTaxForm = ({ region }) => {
             className="inter-base-regular"
             name="automatic_taxes"
             ref={register}
-            label="Calculate taxes automatically?"
+            label="Obliczać podatek automatycznie?"
           />
           <IconTooltip
             content={
-              "When checked Medusa will automatically apply tax calculations to Carts in this Region. When unchecked you will have to manually compute taxes at checkout. Manual taxes are recommended if using a 3rd party tax provider to avoid performing too many requests"
+              "Jeżeli zaznaczone, podatki zostaną automatycznie zastosowane w koszyku w tym regionie. Jeżeli odznaczone, musisz manualnie obliczyć podatki podczas składania zamówienia."
             }
           />
         </div>
@@ -129,13 +129,9 @@ export const RegionTaxForm = ({ region }) => {
             className="inter-base-regular"
             name="gift_cards_taxable"
             ref={register}
-            label="Apply tax to gift cards?"
+            label="Zastosować do kart podarunkowych?"
           />
-          <IconTooltip
-            content={
-              "When checked taxes will be applied to gift cards on checkout. In some contries tax regulations require that taxes are applied to gift cards on purchase."
-            }
-          />
+          <IconTooltip content={"W niektórych krajach jest to wymagane."} />
         </div>
       </div>
       <div className="flex justify-end">
@@ -146,7 +142,7 @@ export const RegionTaxForm = ({ region }) => {
             size="medium"
             type="submit"
           >
-            Save
+            Zapisz
           </Button>
         )}
       </div>

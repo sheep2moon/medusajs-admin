@@ -86,10 +86,10 @@ const TaxDetails = ({ id }) => {
   return (
     <>
       <BodyCard
-        title="Details"
+        title="Szczegóły"
         actionables={[
           {
-            label: "New Tax Rate",
+            label: "Nowa stawka podatku",
             onClick: () => setShowNew(true),
             icon: <PlusIcon />,
           },
@@ -132,7 +132,7 @@ const TaxDetails = ({ id }) => {
           )}
         </Table>
         <h3 className="inter-large-semibold mt-2xlarge mb-base">
-          Tax Calculation Settings
+          Ustawienia obliczania podatków
         </h3>
         <div className="flex flex-1">
           {!regionIsLoading && <RegionTaxForm region={region} />}

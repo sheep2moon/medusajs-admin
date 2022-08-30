@@ -89,14 +89,14 @@ const NewRegion = ({ onDone, onClick }) => {
       },
       {
         onSuccess: ({ region }) => {
-          notification("Success", "Successfully created region", "success")
+          notification("Sukces", "Pomyślnie stworzono region", "success")
           if (onDone) {
             onDone(region.id)
           }
           onClick()
         },
         onError: (error) => {
-          notification("Error", getErrorMessage(error), "error")
+          notification("Błąd", getErrorMessage(error), "error")
         },
       }
     )
@@ -127,8 +127,8 @@ const NewRegion = ({ onDone, onClick }) => {
               <div className="grid grid-cols-1 medium:grid-cols-2 gap-y-xsmall gap-x-base">
                 <Input
                   name="name"
-                  label="Name"
-                  placeholder="Region name..."
+                  label="Nazwa"
+                  placeholder="Nazwa regionu..."
                   ref={register({ required: true })}
                   className="mb-base min-w-[335px] w-full"
                 />
@@ -146,20 +146,20 @@ const NewRegion = ({ onDone, onClick }) => {
                   min={0}
                   max={1}
                   name="tax_rate"
-                  label="Tax Rate"
+                  label="Stawka podatku"
                   ref={register({ max: 1, min: 0 })}
                 />
                 <Input
                   placeholder="1000"
                   name="tax_code"
-                  label="Tax Code"
+                  label="Kod podatku"
                   ref={register}
                   className="mb-base min-w-[335px] w-full"
                 />
                 <Select
                   isMultiSelect
                   enableSearch
-                  label="Countries"
+                  label="Kraje"
                   hasSelectAll
                   options={countryOptions}
                   value={countries}
@@ -177,7 +177,7 @@ const NewRegion = ({ onDone, onClick }) => {
                     onChange={handlePaymentChange}
                     options={paymentOptions}
                     value={paymentProviders}
-                    label="Payment Providers"
+                    label="Dostawcy płatności"
                     enableSearch
                   />
                 )}
@@ -203,7 +203,7 @@ const NewRegion = ({ onDone, onClick }) => {
                 size="small"
                 className="w-eventButton justify-center"
               >
-                Cancel Changes
+                Anuluj zmiany
               </Button>
               <Button
                 type="submit"
@@ -211,7 +211,7 @@ const NewRegion = ({ onDone, onClick }) => {
                 size="small"
                 className="w-eventButton justify-center"
               >
-                Save
+                Zapisz
               </Button>
             </div>
           </Modal.Footer>

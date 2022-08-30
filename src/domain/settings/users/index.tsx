@@ -48,12 +48,12 @@ const Users: React.FC = () => {
       <div className="w-full flex flex-col grow">
         <BreadCrumb
           previousRoute="/a/settings"
-          previousBreadcrumb="Settings"
-          currentPage="The Team"
+          previousBreadcrumb="Ustawienia"
+          currentPage="Zespół"
         />
         <BodyCard
-          title="The Team"
-          subtitle="Manage users of your Medusa Store"
+          title="Zespół"
+          subtitle="Zarządzaj zespołem sklepu"
           actionables={actionables}
         >
           <div className="flex grow  flex-col pt-2">

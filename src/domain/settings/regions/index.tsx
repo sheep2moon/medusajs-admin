@@ -59,17 +59,17 @@ const Regions = () => {
       <div>
         <BreadCrumb
           previousRoute="/a/settings"
-          previousBreadcrumb="Settings"
-          currentPage="Regions"
+          previousBreadcrumb="Ustawienia"
+          currentPage="Regiony"
         />
         <TwoSplitPane>
           <BodyCard
-            title="Regions"
-            subtitle="Manage the markets that you will operate within"
+            title="Regiony"
+            subtitle="Zarządzaj regionami sprzedaży"
             actionables={[
               {
                 icon: <PlusIcon />,
-                label: "Add region",
+                label: "Dodaj region",
                 onClick: () => setAddRegion(!addRegion),
               },
             ]}
@@ -84,14 +84,14 @@ const Regions = () => {
                 onValueChange={setSelectedRegion}
               >
                 {regions.map((r) => {
-                  const providers = `Payment providers: ${
+                  const providers = `Obsługa płatności: ${
                     r.payment_providers
                       .map((pp) => paymentProvidersMapper(pp.id).label)
-                      .join(", ") || "not configured"
+                      .join(", ") || "nie ustawiono"
                   } - Fulfillment providers: ${
                     r.fulfillment_providers
                       .map((fp) => fulfillmentProvidersMapper(fp.id).label)
-                      .join(", ") || "not configured"
+                      .join(", ") || "nie ustawiono"
                   }`
                   return (
                     <RadioGroup.Item

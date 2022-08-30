@@ -54,7 +54,7 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
   return isSelectable ? (
     <Select
       enableSearch
-      label="Currency"
+      label="Waluta"
       options={opts}
       value={selected}
       onChange={setSelected}
@@ -65,7 +65,7 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
     />
   ) : (
     <Input
-      label="Currency"
+      label="Waluta"
       readOnly
       className={clsx("pointer-events-none", className)}
       value={undefined}

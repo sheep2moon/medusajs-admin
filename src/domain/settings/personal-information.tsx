@@ -26,20 +26,20 @@ const PersonalInformation = () => {
   const submit = (data) => {
     handleUpdateUser(user.id, data)
       .then(() => {
-        notification("Success", "Successfully updated user", "success")
+        notification("Sukces", "Zaktualizowano profil", "success")
       })
       .catch((err) => {
-        notification("Error", getErrorMessage(err), "error")
+        notification("Błąd", getErrorMessage(err), "error")
       })
   }
 
   const events = [
     {
-      label: "Save",
+      label: "Zapisz",
       onClick: handleSubmit(submit),
     },
     {
-      label: "Cancel changes",
+      label: "Anuluj zmiany",
       onClick: () => navigate("/a/settings"),
     },
   ]
@@ -55,19 +55,19 @@ const PersonalInformation = () => {
   return (
     <div>
       <BreadCrumb
-        currentPage={"Personal Information"}
-        previousBreadcrumb={"Settings"}
+        currentPage={"Personalne informacje"}
+        previousBreadcrumb={"Ustawienia"}
         previousRoute="/a/settings"
       />
       <TwoSplitPane>
         <BodyCard
-          title="Personal Information"
-          subtitle="Manage your Medusa profile"
+          title="Personalne informacje"
+          subtitle="Zarządzaj ustawieniami profilu."
           events={events}
           className={"h-auto max-h-full"}
         >
           <div>
-            <span className="inter-base-semibold">Picture</span>
+            <span className="inter-base-semibold">Zdjęcie</span>
             <div
               onClick={() => setModalIsOpen(true)}
               className="w-28 h-28 p-2 mt-2 flex items-center justify-center rounded-rounded hover:bg-grey-5 cursor-pointer"
@@ -91,20 +91,20 @@ const PersonalInformation = () => {
             </div>
           </div>
           <div className="mt-6">
-            <span className="inter-base-semibold">General</span>
+            <span className="inter-base-semibold">Ogólne</span>
             <div className="flex mt-4">
               <Input
-                label="First name"
+                label="Imię"
                 name="first_name"
-                placeholder="Lebron"
+                placeholder="Jaś"
                 defaultValue={user.first_name}
                 onChange={(e) => setValue("first_name", e.target.value)}
                 className="mr-4"
               />
               <Input
-                label="Last name"
+                label="Nazwisko"
                 name="last_name"
-                placeholder="James"
+                placeholder="Fasola"
                 defaultValue={user.last_name}
                 onChange={(e) => setValue("last_name", e.target.value)}
               />

@@ -32,11 +32,15 @@ const NewTaxRate = ({ regionId, onDismiss }) => {
   const onSave = (data) => {
     createTaxRate.mutate(data, {
       onSuccess: () => {
-        notification("Success", "Successfully created tax rate.", "success")
+        notification(
+          "Sukces",
+          "Pomyślnie stworzono stawke podatkową",
+          "success"
+        )
         onDismiss()
       },
       onError: (error) => {
-        notification("Error", getErrorMessage(error), "error")
+        notification("Błąd", getErrorMessage(error), "error")
       },
     })
   }
@@ -77,16 +81,16 @@ const NewTaxRate = ({ regionId, onDismiss }) => {
         <Modal.Body>
           <Modal.Header handleClose={onDismiss}>
             <div>
-              <h1 className="inter-xlarge-semibold">Add Tax Rate</h1>
+              <h1 className="inter-xlarge-semibold">Dodaj stawke podatkową</h1>
             </div>
           </Modal.Header>
           <Modal.Content>
             <div>
-              <p className="inter-base-semibold mb-base">Details</p>
+              <p className="inter-base-semibold mb-base">Szczegóły</p>
               <Input
                 name="name"
-                label="Name"
-                placeholder="Rate name"
+                label="Nazwa"
+                placeholder="Nazwa stawki"
                 ref={register({ required: true })}
                 className="mb-base min-w-[335px] w-full"
               />
@@ -110,7 +114,7 @@ const NewTaxRate = ({ regionId, onDismiss }) => {
               />
             </div>
             <div>
-              <p className="inter-base-semibold mb-base">Overrides</p>
+              <p className="inter-base-semibold mb-base">Nadpisz</p>
               {(rules.product_types.length > 0 ||
                 rules.products.length > 0 ||
                 rules.shipping_options.length > 0) && (
@@ -134,10 +138,10 @@ const NewTaxRate = ({ regionId, onDismiss }) => {
                         )
                       }}
                       index={1}
-                      name="Product Rules"
-                      description={`Applies to ${
+                      name="Produktów"
+                      description={`Zastosowano do ${
                         rules.products.length
-                      } product${rules.products.length > 1 ? "s" : ""}`}
+                      } produkt${rules.products.length > 1 ? "ów" : "u"}`}
                     />
                   )}
                   {rules.product_types.length > 0 && (
@@ -162,11 +166,11 @@ const NewTaxRate = ({ regionId, onDismiss }) => {
                         )
                       }}
                       index={2}
-                      name="Product Type Rules"
-                      description={`Applies to ${
+                      name="Typy produktów"
+                      description={`Zastosowano do ${
                         rules.product_types.length
-                      } product type${
-                        rules.product_types.length > 1 ? "s" : ""
+                      } typów produkt${
+                        rules.product_types.length > 1 ? "ów" : "u"
                       }`}
                     />
                   )}
@@ -192,11 +196,11 @@ const NewTaxRate = ({ regionId, onDismiss }) => {
                         )
                       }}
                       index={3}
-                      name="Shipping Option Rules"
-                      description={`Applies to ${
+                      name="Metody dostawy"
+                      description={`Zastosowano do ${
                         rules.shipping_options.length
-                      } shipping option${
-                        rules.shipping_options.length > 1 ? "s" : ""
+                      } metod dostaw${
+                        rules.shipping_options.length > 1 ? "" : "y"
                       }`}
                     />
                   )}
@@ -222,7 +226,7 @@ const NewTaxRate = ({ regionId, onDismiss }) => {
                   size="medium"
                   variant="secondary"
                 >
-                  <PlusIcon /> Add Overrides
+                  <PlusIcon /> Dodaj do nadpisania
                 </Button>
               )}
             </div>

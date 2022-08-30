@@ -29,11 +29,11 @@ const CreateReturnReasonModal = ({
   const onCreate = async (data) => {
     await createRR.mutateAsync(data, {
       onSuccess: () => {
-        notification("Success", "Created a new return reason", "success")
+        notification("Sukces", "Stworzono nowy powód zwrotu", "success")
       },
       onError: () => {
         notification(
-          "Error",
+          "Błąd",
           "Cant create a Return reason with an existing code",
           "error"
         )
@@ -53,23 +53,23 @@ const CreateReturnReasonModal = ({
             <Input
               ref={register({ required: true })}
               name="value"
-              label="Value"
-              placeholder="wrong_size"
+              label="Wartość"
+              placeholder="zly_rozmiar"
             />
             <Input
               className="ml-base"
               ref={register({ required: true })}
               name="label"
-              label="Label"
-              placeholder="Wrong size"
+              label="Etykieta"
+              placeholder="Zły rozmiar"
             />
           </div>
           <Input
             className="mt-large"
             ref={register}
             name="description"
-            label="Description"
-            placeholder="Customer received a wrong size"
+            label="Opis"
+            placeholder="Klient otrzymał zły rozmiar produktu"
           />
         </Modal.Content>
         <Modal.Footer>
@@ -80,7 +80,7 @@ const CreateReturnReasonModal = ({
               size="large"
               onClick={handleClose}
             >
-              Cancel
+              Anuluj
             </Button>
             <Button
               loading={createRR.isLoading}
@@ -89,7 +89,7 @@ const CreateReturnReasonModal = ({
               variant="primary"
               onClick={handleSubmit(onCreate)}
             >
-              Create
+              Stwórz
             </Button>
           </div>
         </Modal.Footer>

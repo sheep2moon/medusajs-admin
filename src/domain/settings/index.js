@@ -27,64 +27,64 @@ const SettingsIndex = () => {
   return (
     <SettingsOverview>
       <SettingsCard
-        heading={"Regions"}
-        description={"Manage the markets you will operate within"}
+        heading={"Regiony"}
+        description={"Zarządzaj regionami sprzedaży"}
         icon={<MapPinIcon />}
         to={`/a/settings/regions`}
       />
       <SettingsCard
-        heading={"Currencies"}
-        description={"Manage the markets you will operate within"}
+        heading={"Waluty"}
+        description={"Zarządzaj walutami"}
         icon={<CoinsIcon />}
         to={`/a/settings/currencies`}
       />
       <SettingsCard
-        heading={"Store Details"}
-        description={"Manage your business details"}
+        heading={"Szczegóły sklepu"}
+        description={"Zarządzaj szczegółami sklepu"}
         icon={<CrosshairIcon />}
         to={`/a/settings/details`}
       />
       <SettingsCard
-        heading={"Shipping"}
-        description={"Manage shipping profiles"}
+        heading={"Dostawa"}
+        description={"Zarządzaj profilami dostawy"}
         icon={<TruckIcon />}
         to={`/a/settings/shipping-profiles`}
         disabled={true}
       />
       <SettingsCard
-        heading={"Return Reasons"}
-        description={"Manage Order settings"}
+        heading={"Powody zwrotu"}
+        description={"Zarządzaj powodami zwrotów"}
         icon={<DollarSignIcon />}
         to={`/a/settings/return-reasons`}
       />
       <SettingsCard
-        heading={"The Team"}
-        description={"Manage users of your Medusa Store"}
+        heading={"Zespół"}
+        description={"Zarządzaj zespołem"}
         icon={<UsersIcon />}
         to={`/a/settings/team`}
       />
       <SettingsCard
-        heading={"Personal Information"}
-        description={"Mange your Medusa profile"}
+        heading={"Informacje personalne"}
+        description={"Zarządzaj swoim profilem"}
         icon={<HappyIcon />}
         to={`/a/settings/personal-information`}
       />
       <SettingsCard
         heading={"hello@medusajs.com"}
-        description={"Can’t find the answers you’re looking for?"}
+        description={"Potrzebujesz pomocy?"}
         icon={<MailIcon />}
         externalLink={"mailto: hello@medusajs.com"}
       />
       <SettingsCard
-        heading={"Tax Settings"}
-        description={"Manage taxes across regions and products"}
+        heading={"Ustawienia podatków"}
+        description={"Zarządzaj podatkami"}
         icon={<TaxesIcon />}
         to={`/a/settings/taxes`}
       />
       <FeatureToggle featureFlag="sales_channels">
         <SettingsCard
-          heading={"Sales channels"}
-          description={"Control which products are available in which channels"}
+          heading={"Kanały sprzedaży"}
+          description={"Przypisuj produkty do poszczególnych kanałów"}
           icon={<ChannelsIcon />}
           to={`/a/sales-channels`}
         />

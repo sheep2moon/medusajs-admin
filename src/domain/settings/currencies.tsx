@@ -70,10 +70,10 @@ const CurrencySettings = () => {
       },
       {
         onSuccess: () => {
-          notification("Success", "Successfully updated currencies", "success")
+          notification("Sukces", "Pomyślnie ustawiono waluty", "success")
         },
         onError: (error) => {
-          notification("Error", getErrorMessage(error), "error")
+          notification("Błąd", getErrorMessage(error), "error")
         },
       }
     )
@@ -81,11 +81,11 @@ const CurrencySettings = () => {
 
   const currencyEvents = [
     {
-      label: "Save",
+      label: "Zapisz",
       onClick: (e) => onSubmit(e),
     },
     {
-      label: "Cancel changes",
+      label: "Anuluj zmiany",
       onClick: () => navigate("/a/settings"),
     },
   ]
@@ -94,18 +94,18 @@ const CurrencySettings = () => {
     <div>
       <BreadCrumb
         previousRoute="/a/settings"
-        previousBreadcrumb="Settings"
-        currentPage="Currencies"
+        previousBreadcrumb="Ustawienia"
+        currentPage="Waluty"
       />
       <TwoSplitPane>
         <BodyCard
-          title="Currencies"
-          subtitle="Manage the currencies that you will operate in"
+          title="Waluty"
+          subtitle="Zarządzaj walutami które obsługujesz"
           events={currencyEvents}
           className={"h-auto max-h-full"}
         >
           <Select
-            label="Default store currency"
+            label="Domyślna waluta sklepu"
             options={storeCurrencies} // You are only allow to choose default currency from store currencies
             value={selectedCurrency}
             isMultiSelect={false}
@@ -114,7 +114,7 @@ const CurrencySettings = () => {
             className="mb-6"
           />
           <Select
-            label="Store currencies"
+            label="Waluty sklepu"
             options={allCurrencies}
             value={storeCurrencies}
             isMultiSelect={true}

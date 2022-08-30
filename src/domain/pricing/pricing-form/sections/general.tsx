@@ -10,24 +10,24 @@ const General = () => {
     <Accordion.Item
       forceMountContent
       required
-      title="General"
-      tooltip="General information for the price list."
+      title="Ogólne"
+      tooltip="Ogólne informacje o liście cen."
       value="general"
     >
       <div className="flex flex-col gap-y-small group-radix-state-open:mt-5 accordion-margin-transition">
         <InputField
-          label="Name"
+          label="Nazwa"
           name="name"
           required
-          placeholder="B2B, Black Friday..."
-          ref={register({ required: "Name is required" })}
+          placeholder="Black Friday..."
+          ref={register({ required: "Nazwa jest wymagana" })}
         />
         <InputField
-          label="Description"
+          label="Opis"
           name="description"
           required
-          placeholder="For our business partners..."
-          ref={register({ required: "Description is required" })}
+          placeholder="Z okazji międzynarodowego święta wyprzedaży..."
+          ref={register({ required: "Opis jest wymagany" })}
         />
       </div>
     </Accordion.Item>

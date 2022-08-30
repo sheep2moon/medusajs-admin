@@ -59,47 +59,47 @@ const AccountDetails = () => {
       <div className="max-w-[632px]">
         <BreadCrumb
           previousRoute="/a/settings/"
-          previousBreadcrumb="Settings"
-          currentPage="Store Details"
+          previousBreadcrumb="Ustawienia"
+          currentPage="Szczególy Sklepu"
         />
         <BodyCard
           events={[
             {
-              label: "Save",
+              label: "Zapisz",
               type: "button",
               onClick: handleSubmit(onSubmit),
             },
-            { label: "Cancel Changes", type: "button", onClick: handleCancel },
+            { label: "Anuluj zmiany", type: "button", onClick: handleCancel },
           ]}
-          title="Store Details"
-          subtitle="Manage your business details"
+          title="Szczegóły sklepu"
+          subtitle="Ustaw podstawowe informacje"
         >
-          <h6 className="mt-large inter-base-semibold">General</h6>
+          <h6 className="mt-large inter-base-semibold">Główne</h6>
           <Input
             className="mt-base"
-            label="Store name"
+            label="Nazwa sklepu"
             name="name"
-            placeholder="Medusa Store"
+            placeholder="Fishing Time"
             ref={register}
           />
-          <h6 className="mt-2xlarge inter-base-semibold">Advanced settings</h6>
+          <h6 className="mt-2xlarge inter-base-semibold">Zaawansowane</h6>
           <Input
             className="mt-base"
-            label="Swap link template"
+            label="Link szablonu zamiany"
             name="swap_link_template"
             placeholder="https://acme.inc/swap"
             ref={register}
           />
           <Input
             className="mt-base"
-            label="Draft order link template"
+            label="Link szablonu zamówienia"
             name="payment_link_template"
             placeholder="https://acme.inc/swap"
             ref={register}
           />
           <Input
             className="mt-base"
-            label="Invite link template"
+            label="Link szablonu zaproszenia."
             name="invite_link_template"
             placeholder="https://acme.inc/invite={invite_token}"
             ref={register}

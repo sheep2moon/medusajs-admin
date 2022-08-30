@@ -58,12 +58,12 @@ const Taxes = () => {
         <TwoSplitPane threeCols>
           <BodyCard
             forceDropdown
-            title="Regions"
-            subtitle="Select the region you wish to manage taxes for"
+            title="Regiony"
+            subtitle="Wybierz region w których chcesz zarządzać podatkami"
             actionables={[
               {
                 icon: <GearIcon />,
-                label: "Go to Region settings",
+                label: "Idź do ustawień regionów",
                 onClick: () => navigate("/a/settings/regions"),
               },
             ]}

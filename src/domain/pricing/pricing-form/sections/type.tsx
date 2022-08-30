@@ -13,7 +13,7 @@ const Type = () => {
       forceMountContent
       required
       value="type"
-      title="Price list type"
+      title="Typ listy cen"
       description="Select the type of the price list"
       tooltip="Unlike with sale prices a price override will not communicate to the customer that the price is part of a sale."
     >

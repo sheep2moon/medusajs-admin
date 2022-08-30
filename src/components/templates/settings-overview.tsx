@@ -5,8 +5,8 @@ const SettingsOverview: React.FC = ({ children }) => {
   return (
     <div>
       <PageDescription
-        title={"Settings"}
-        subtitle={"Manage the settings for your Medusa store"}
+        title={"Ustawienia"}
+        subtitle={"Zarządzaj ustawieniami sklepu"}
       />
       <div className="grid medium:grid-cols-2 auto-cols-fr grid-cols-1 gap-x-base gap-y-xsmall">
         {children}
