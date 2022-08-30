@@ -141,7 +141,7 @@ const ViewProductsTable: React.FC<ViewProductsTableProps> = ({
         <Table
           enableSearch
           handleSearch={handleSearch}
-          searchPlaceholder="Search Products"
+          searchPlaceholder="Szukaj produktów"
           {...getTableProps()}
           className="h-full"
         >
@@ -150,7 +150,7 @@ const ViewProductsTable: React.FC<ViewProductsTableProps> = ({
               {isLoading ? (
                 <Spinner size="large" variant="secondary" />
               ) : (
-                "No products yet"
+                "Brak produktów"
               )}
             </div>
           ) : (
@@ -177,7 +177,7 @@ const ViewProductsTable: React.FC<ViewProductsTableProps> = ({
           limit={limit}
           offset={offset}
           pageSize={offset + rows.length}
-          title="Products"
+          title="Produkty"
           currentPage={pageIndex + 1}
           pageCount={pageCount}
           nextPage={handleNext}
@@ -190,8 +190,8 @@ const ViewProductsTable: React.FC<ViewProductsTableProps> = ({
         <DeletePrompt
           onDelete={async () => handleRemoveProduct()}
           handleClose={() => setShowDelete(!showDelete)}
-          heading="Remove product from collection"
-          successText="Product removed from collection"
+          heading="Usuń produkt z kolekcji"
+          successText="Produkt usunięty z kolekcji"
         />
       )}
     </>

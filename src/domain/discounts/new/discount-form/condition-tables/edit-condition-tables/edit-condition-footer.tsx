@@ -39,7 +39,7 @@ const EditConditionFooter: React.FC<EditConditionFooterProps> = ({
           onClose()
         }}
       >
-        Delete condition
+        Usuń warunek
       </Button>
       <Button
         variant="primary"
@@ -54,7 +54,7 @@ const EditConditionFooter: React.FC<EditConditionFooterProps> = ({
         }}
         className="min-w-[128px]"
       >
-        Save
+        Zapisz
       </Button>
     </div>
   )

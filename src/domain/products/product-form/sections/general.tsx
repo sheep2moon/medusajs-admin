@@ -62,8 +62,8 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
     <GeneralBodyCard
       isEdit={isEdit}
       product={product}
-      title="General"
-      subtitle="To start selling, all you need is a name, price, and image"
+      title="Ogólne"
+      subtitle=""
     >
       <div className="mt-large">
         <h6 className="inter-base-semibold mb-1">Szczegóły</h6>
@@ -71,7 +71,7 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
           htmlFor="name"
           className="inter-small-regular text-grey-50 block max-w-[370px] mb-base"
         >
-          Nadaj krótką i prostą nazwę. 50-60 najlepiej.
+          Nadaj krótką i prostą nazwę. Najlepiej 50-60 znaków.
         </label>
         <div className="flex gap-8 mb-base">
           <Input
@@ -99,7 +99,7 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
           className="inter-small-regular text-grey-50 block max-w-[370px] mb-base"
           htmlFor="description"
         >
-          Krótki i prosty opis produktu. 120-160 najlepiej.
+          Krótki i prosty opis produktu. Najlepiej 120-160 znaków.
         </label>
         <div className="grid grid-rows-3 grid-cols-2 gap-x-8 gap-y-4 mb-large">
           <Textarea

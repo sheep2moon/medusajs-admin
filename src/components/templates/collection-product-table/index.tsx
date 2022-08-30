@@ -38,18 +38,18 @@ const CollectionProductTable: React.FC<CollectionProductTableProps> = ({
   useEffect(() => {
     setFilteringOptions([
       {
-        title: "Sort by",
+        title: "Sortuj",
         options: [
           {
-            title: "All",
+            title: "Wszystko",
             onClick: () => {},
           },
           {
-            title: "Newest",
+            title: "Najnowsze",
             onClick: () => {},
           },
           {
-            title: "Oldest",
+            title: "Najstarsze",
             onClick: () => {},
           },
         ],
@@ -142,16 +142,12 @@ const CollectionProductTable: React.FC<CollectionProductTableProps> = ({
     setQuery(q)
   }
 
-  useEffect(() => {
-    console.log("products", selectedProducts)
-  }, [selectedProducts])
-
   return (
     <div className="w-full h-full flex flex-col justify-between overflow-y-auto">
       <Table
         enableSearch
         handleSearch={handleSearch}
-        searchPlaceholder="Search Products"
+        searchPlaceholder="Szukaj produktów"
         filteringOptions={filteringOptions}
         {...getTableProps()}
         className="h-full"
@@ -180,7 +176,7 @@ const CollectionProductTable: React.FC<CollectionProductTableProps> = ({
         limit={limit}
         offset={offset}
         pageSize={offset + rows.length}
-        title="Products"
+        title="Produkty"
         currentPage={pageIndex + 1}
         pageCount={pageCount}
         nextPage={handleNext}

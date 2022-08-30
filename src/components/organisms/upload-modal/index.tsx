@@ -141,11 +141,11 @@ function DropArea(props: DropAreaProps) {
       )}
     >
       <span className="text-grey-50 text-small">
-        Drop your {props.fileTitle} file here, or
+        Upuść {props.fileTitle} pliki tutaj, lub
         <a className="text-violet-60">
           <label className="cursor-pointer" htmlFor="upload-form-file">
             {" "}
-            click to browse.
+            kliknij by przeglądać.
           </label>
           <input
             type="file"
@@ -158,7 +158,7 @@ function DropArea(props: DropAreaProps) {
         </a>
       </span>
       <span className="text-grey-40 text-small">
-        Only .csv files are supported.
+        Tylko pliki .csv są wspierane.
       </span>
     </div>
   )

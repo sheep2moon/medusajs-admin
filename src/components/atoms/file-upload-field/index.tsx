@@ -12,8 +12,8 @@ type FileUploadFieldProps = {
 
 const defaultText = (
   <span>
-    Drop your images here, or{" "}
-    <span className="text-violet-60">click to browse</span>
+    Upuść obrazy tutaj, lub{" "}
+    <span className="text-violet-60">Kliknij by znaleźć</span>
   </span>
 )
 

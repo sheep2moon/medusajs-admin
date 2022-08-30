@@ -49,8 +49,12 @@ const Overview: React.FC<RouteComponentProps> = () => {
       { status },
       {
         onSuccess: () =>
-          notification("Success", "Successfully updated Gift Card", "success"),
-        onError: (err) => notification("Error", getErrorMessage(err), "error"),
+          notification(
+            "Sukces",
+            "Pomyślnie zaktualizowano kartę podarunkową",
+            "success"
+          ),
+        onError: (err) => notification("Błąd", getErrorMessage(err), "error"),
       }
     )
   }
@@ -65,7 +69,7 @@ const Overview: React.FC<RouteComponentProps> = () => {
 
   const actionables = [
     {
-      label: "Custom Gift Card",
+      label: "Własna karta podarunkowa",
       onClick: () => setShowCreateCustom(true),
       icon: <PlusIcon size={20} />,
     },
@@ -83,8 +87,8 @@ const Overview: React.FC<RouteComponentProps> = () => {
     <>
       <div className="flex flex-col grow h-full">
         <PageDescription
-          title="Gift Cards"
-          subtitle="Manage the Gift Cards of your Medusa store"
+          title="Karty podarunkowe"
+          subtitle="Zarządzaj kartami podarunkowymi"
         />
         {!isLoading ? (
           <>
@@ -97,22 +101,22 @@ const Overview: React.FC<RouteComponentProps> = () => {
                   onUnpublish={onUpdate}
                 />
               ) : (
-                <BannerCard title="Are you ready to sell your first Gift Card?">
+                <BannerCard title="Możesz zacząć sprzedawać karty podarunkowe do swojego sklepu">
                   <BannerCard.Description
                     cta={{
-                      label: "Create Gift Card",
+                      label: "Stwórz karte podarunkową",
                       onClick: () => setShowCreate(true),
                     }}
                   >
-                    No Gift Card has been added yet.
+                    Nie stworzyłeś jeszcze żadnych kart podarunkowych.
                   </BannerCard.Description>
                 </BannerCard>
               )}
             </div>
             <div className="w-full flex flex-col grow">
               <BodyCard
-                title="History"
-                subtitle="See the history of purchased Gift Cards"
+                title="Historia"
+                subtitle="Historia zakupów kart podarunkowych"
                 actionables={actionables}
               >
                 {giftCards && <GiftCardTable giftCards={giftCards} />}
@@ -133,9 +137,9 @@ const Overview: React.FC<RouteComponentProps> = () => {
         <DeletePrompt
           handleClose={() => setShowDelete(!showDelete)}
           onDelete={async () => onDelete()}
-          successText="Successfully deleted Gift Card"
-          confirmText="Yes, delete"
-          heading="Delete Gift Card"
+          successText="Pomyślnie usunięto karte podarunkową"
+          confirmText="Tak, usuń"
+          heading="Usuń kartę podarunkową"
         />
       )}
     </>

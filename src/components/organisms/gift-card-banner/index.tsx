@@ -41,17 +41,17 @@ const GiftCardBanner: React.FC<GiftCardBannerProps> = ({
 }) => {
   const actions: ActionType[] = [
     {
-      label: "Edit",
+      label: "Edytuj",
       onClick: onEdit,
       icon: <EditIcon size={16} />,
     },
     {
-      label: status === "published" ? "Unpublish" : "Publish",
+      label: status === "published" ? "Nieopublikowany" : "Opublikowany",
       onClick: onUnpublish,
       icon: <UnpublishIcon size={16} />,
     },
     {
-      label: "Delete",
+      label: "Usuń",
       onClick: onDelete,
       icon: <TrashIcon size={16} />,
       variant: "danger",
@@ -85,7 +85,7 @@ const GiftCardBanner: React.FC<GiftCardBannerProps> = ({
           <TagGrid tags={denominations} badgeVariant="default" />
           <StatusIndicator
             variant={status === "published" ? "success" : "danger"}
-            title={status === "published" ? "Published" : "Unpublished"}
+            title={status === "published" ? "Opublikowany" : "Nieopublikowany"}
           />
         </div>
       </BannerCard.Footer>

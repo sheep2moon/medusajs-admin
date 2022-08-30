@@ -17,10 +17,7 @@ const StockAndInventory = () => {
   }))
 
   return (
-    <BodyCard
-      title="Stock & Inventory"
-      subtitle="To start selling, all you need is a name, price, and image"
-    >
+    <BodyCard title="Dane Magazynowe" subtitle="">
       <div className="mt-large">
         {!isVariantsView && (
           <>
@@ -31,29 +28,29 @@ const StockAndInventory = () => {
             </div>
             <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-large">
               <Input
-                label="Stock Keeping Unit (SKU)"
+                label="Numer jednostki magazynowej (SKU)"
                 name="sku"
                 placeholder="SUN-G, JK1234..."
                 ref={register}
               />
               <Input
-                label="Barcode (EAN)"
+                label="Kod kreskowy (EAN)"
                 name="ean"
                 placeholder="1231231231234..."
                 ref={register}
               />
               <Input
-                label="Quantity in stock"
+                label="Dostępna ilość"
                 name="inventory_quantity"
                 type="number"
                 placeholder="100"
                 ref={register({ setValueAs: numberOrNull })}
               />
               <Input
-                label="Material"
+                label="Materiał"
                 name="material"
                 ref={register}
-                placeholder="Wool..."
+                placeholder="Wełna..."
               />
             </div>
           </>
@@ -63,12 +60,12 @@ const StockAndInventory = () => {
             <div className="flex item-center gap-x-1.5">
               <Checkbox
                 name="manage_inventory"
-                label="Manage Inventory"
+                label="Zarządzaj magazynem"
                 ref={register}
               />
               <IconTooltip
                 content={
-                  "When checked Medusa will regulate the inventory when orders and returns are made."
+                  "Jeżeli zaznaczone, sklep będzie regulował ilość na podstawie zamówień i zwrotów."
                 }
               />
             </div>
@@ -76,26 +73,24 @@ const StockAndInventory = () => {
               <Checkbox
                 name="allow_backorder"
                 ref={register}
-                label="Allow backorders"
+                label="Zezwól na zamawianie przy ilości 0"
               />
               <IconTooltip
                 content={
-                  "When checked the product will be available for purchase despite the product being sold out."
+                  "Klient będzie mógł zamówić ten produkt nawet gdy ilość w magazynie wynosić będzie 0."
                 }
               />
             </div>
           </div>
         )}
         <div className="flex items-center mb-base">
-          <h6 className="inter-base-semibold text-grey-90 mr-1.5">
-            Dimensions
-          </h6>
+          <h6 className="inter-base-semibold text-grey-90 mr-1.5">Wymiary</h6>
         </div>
         <div className="flex gap-x-8">
           <div className="flex-1 grid grid-cols-2 gap-x-2 gap-y-4 mb-large">
             <Input
               type="number"
-              label="Height"
+              label="Wysokość"
               name="height"
               ref={register({ setValueAs: numberOrNull })}
               min={0}
@@ -103,7 +98,7 @@ const StockAndInventory = () => {
             />
             <Input
               type="number"
-              label="Width"
+              label="Szerokość"
               name="width"
               ref={register({ setValueAs: numberOrNull })}
               placeholder="100..."
@@ -111,7 +106,7 @@ const StockAndInventory = () => {
             />
             <Input
               type="number"
-              label="Length"
+              label="Długość"
               name="length"
               ref={register({ setValueAs: numberOrNull })}
               placeholder="100..."
@@ -119,7 +114,7 @@ const StockAndInventory = () => {
             />
             <Input
               type="number"
-              label="Weight"
+              label="Waga"
               name="weight"
               ref={register({ setValueAs: numberOrNull })}
               placeholder="100..."
@@ -128,13 +123,13 @@ const StockAndInventory = () => {
           </div>
           <div className="flex-1 grid grid-cols-2 gap-x-2 gap-y-4 mb-large">
             <Input
-              label="MID Code"
+              label="Kod MID"
               name="mid_code"
               ref={register}
               placeholder="100..."
             />
             <Input
-              label="HS Code"
+              label="Kod HS"
               name="hs_code"
               ref={register}
               placeholder="100..."
@@ -146,8 +141,8 @@ const StockAndInventory = () => {
                 return (
                   <Select
                     enableSearch
-                    label="Country of origin"
-                    placeholder="Select a country"
+                    label="Kraj pochodzenia"
+                    placeholder="Wybierz kraj"
                     options={countryOptions}
                     value={value}
                     onChange={onChange}

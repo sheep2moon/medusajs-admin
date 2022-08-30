@@ -45,7 +45,11 @@ const NewProductPage = () => {
         })
         .catch((err) => {
           setIsLoading(false)
-          notification("Error uploading images", getErrorMessage(err), "error")
+          notification(
+            "Błąd przy przesyłaniu zdjęć",
+            getErrorMessage(err),
+            "error"
+          )
           return
         })
     }
@@ -59,12 +63,16 @@ const NewProductPage = () => {
       {
         onSuccess: ({ product }) => {
           setIsLoading(false)
-          notification("Success", "Product was succesfully created", "success")
+          notification(
+            "Sukces",
+            "Produkt został pomyślnie stworzony",
+            "success"
+          )
           navigate(`/a/products/${product.id}`)
         },
         onError: (error) => {
           setIsLoading(false)
-          notification("Error", getErrorMessage(error), "error")
+          notification("Błąd", getErrorMessage(error), "error")
         },
       }
     )
@@ -127,19 +135,19 @@ const SaveNotification = ({ isLoading = false }) => {
           <FormToasterContainer.MultiActionButton
             actions={[
               {
-                label: "Save and publish",
+                label: "Zapisz i opublikuj",
                 onClick: handleSubmit(onPublish, handleFormError),
               },
               {
-                label: "Save as draft",
+                label: "Zapisz jako plan",
                 onClick: handleSubmit(onSaveDraft, handleFormError),
               },
             ]}
           >
-            Save
+            Zapisz
           </FormToasterContainer.MultiActionButton>
           <FormToasterContainer.DiscardButton onClick={resetForm}>
-            Discard
+            Odrzuć
           </FormToasterContainer.DiscardButton>
         </FormToasterContainer.Actions>
       </FormToasterContainer>

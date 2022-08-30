@@ -157,14 +157,14 @@ const AddProductsTable: React.FC<AddProductsTableProps> = ({
     <Modal handleClose={onClose}>
       <Modal.Body>
         <Modal.Header handleClose={onClose}>
-          <h3 className="inter-xlarge-semibold">Add Products</h3>
+          <h3 className="inter-xlarge-semibold">Dodaj produkty</h3>
         </Modal.Header>
         <Modal.Content>
           <div className="w-full flex flex-col justify-between h-[650px]">
             <Table
               enableSearch
               handleSearch={handleSearch}
-              searchPlaceholder="Search Products"
+              searchPlaceholder="Szukaj produktów"
               {...getTableProps()}
               className="flex-grow"
             >
@@ -196,7 +196,7 @@ const AddProductsTable: React.FC<AddProductsTableProps> = ({
               limit={PAGE_SIZE}
               offset={offset}
               pageSize={offset + rows.length}
-              title="Products"
+              title="Produkty"
               currentPage={pageIndex + 1}
               pageCount={pageCount}
               nextPage={handleNext}
@@ -214,7 +214,7 @@ const AddProductsTable: React.FC<AddProductsTableProps> = ({
               className="w-eventButton"
               onClick={onClose}
             >
-              Cancel
+              Anuluj
             </Button>
             <Button
               variant="primary"
@@ -223,7 +223,7 @@ const AddProductsTable: React.FC<AddProductsTableProps> = ({
               onClick={handleSubmit}
               disabled={disabled}
             >
-              Save
+              Zapisz
             </Button>
           </div>
         </Modal.Footer>

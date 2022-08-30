@@ -60,7 +60,7 @@ const NewGiftCard: React.FC<NewGiftCardProps> = ({ onClose }) => {
         size="medium"
       >
         <CurrencyInput.AmountInput
-          label="Amount"
+          label="Wartość"
           amount={undefined}
           onChange={(v) => handleValueUpdate(name, v)}
         />
@@ -94,13 +94,13 @@ const NewGiftCard: React.FC<NewGiftCardProps> = ({ onClose }) => {
     const trimmedName = data.name.trim()
 
     if (!trimmedName) {
-      notification("Error", "Please enter a name for the Gift Card", "error")
+      notification("Błąd", "Wpisz nazwę karty podarunkowej", "error")
       focusByName("name")
       return
     }
 
     if (!data.denominations) {
-      notification("Error", "Please add at least one denomination", "error")
+      notification("Błąd", "Dodaj przynajmniej jeden nominał", "error")
       focusByName("add-denomination")
       return
     }
@@ -124,7 +124,7 @@ const NewGiftCard: React.FC<NewGiftCardProps> = ({ onClose }) => {
         title: data.name,
         description: data.description,
         discountable: false,
-        options: [{ title: "Denominations" }],
+        options: [{ title: "Nominały" }],
         variants: data.denominations.map((d, i) => ({
           title: `${i + 1}`,
           inventory_quantity: 0,
@@ -138,12 +138,16 @@ const NewGiftCard: React.FC<NewGiftCardProps> = ({ onClose }) => {
       },
       {
         onSuccess: () => {
-          notification("Success", "Successfully created Gift Card", "success")
+          notification(
+            "Sukces",
+            "Pomyślnie stworzono karte podarunkową",
+            "success"
+          )
           refetch()
           navigate("/a/gift-cards/manage")
         },
         onError: (err) => {
-          notification("Error", getErrorMessage(err), "error")
+          notification("Błąd", getErrorMessage(err), "error")
         },
       }
     )
@@ -155,30 +159,32 @@ const NewGiftCard: React.FC<NewGiftCardProps> = ({ onClose }) => {
         <Modal.Body>
           <Modal.Header handleClose={onClose}>
             <div>
-              <h1 className="inter-xlarge-semibold">Create Gift Card</h1>
+              <h1 className="inter-xlarge-semibold">
+                Stwórz kartę podarunkową
+              </h1>
             </div>
           </Modal.Header>
           <Modal.Content>
             <div className="mb-base">
-              <h3 className="inter-base-semibold">Product information</h3>
+              <h3 className="inter-base-semibold">Informacje o produkcie</h3>
             </div>
             <div className="flex flex-col gap-y-base">
               <InputField
-                label={"Name"}
+                label={"Nazwa"}
                 required
-                placeholder="The best Gift Card"
+                placeholder="Karta Fanatyka Wędkarstwa"
                 name="name"
                 ref={register({ required: true })}
               />
               <Textarea
-                label="Description"
-                placeholder="The best Gift Card of all time"
+                label="Opis"
+                placeholder="Dla fanatyków"
                 name="description"
                 ref={register}
               />
             </div>
             <div className="mt-xlarge">
-              <h3 className="inter-base-semibold">Thumbnail</h3>
+              <h3 className="inter-base-semibold">Miniaturka</h3>
               <div className="h-[80px] mt-base">
                 {thumbnail ? (
                   <div className="flex items-center gap-x-6">
@@ -197,7 +203,7 @@ const NewGiftCard: React.FC<NewGiftCardProps> = ({ onClose }) => {
                           type="button"
                           onClick={() => setThumbnail(null)}
                         >
-                          Delete
+                          Usuń
                         </button>
                       </div>
                     </div>
@@ -213,7 +219,7 @@ const NewGiftCard: React.FC<NewGiftCardProps> = ({ onClose }) => {
             </div>
             <div className="mt-xlarge">
               <h3 className="inter-base-semibold mb-base">
-                Denominations<span className="text-rose-50">*</span>
+                Nominały<span className="text-rose-50">*</span>
               </h3>
               <div className="flex flex-col gap-y-xsmall">
                 {denominations.map((denomination) => {
@@ -244,7 +250,7 @@ const NewGiftCard: React.FC<NewGiftCardProps> = ({ onClose }) => {
                 type="button"
               >
                 <PlusIcon size={20} />
-                Add Denomination
+                Dodaj nominał
               </Button>
             </div>
           </Modal.Content>
@@ -257,7 +263,7 @@ const NewGiftCard: React.FC<NewGiftCardProps> = ({ onClose }) => {
                 className="w-eventButton"
                 onClick={onClose}
               >
-                Cancel
+                Anuluj
               </Button>
               <Button
                 type="submit"
@@ -265,7 +271,7 @@ const NewGiftCard: React.FC<NewGiftCardProps> = ({ onClose }) => {
                 size="small"
                 className="w-eventButton"
               >
-                Create & Publish
+                Stwórz & Opublikuj
               </Button>
             </div>
           </Modal.Footer>

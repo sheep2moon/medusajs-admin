@@ -131,11 +131,11 @@ const VariantEditor = ({
               tabIndex={0}
               className="inter-base-semibold mb-4 flex items-center gap-xsmall"
             >
-              {"General"}
+              {"Ogólne"}
             </label>
 
             <div className="grid grid-cols-1 gap-y-small">
-              <Input label="Title" name="title" ref={register} />
+              <Input label="Tytuł" name="title" ref={register} />
               {fields.map((field, index) => (
                 <div key={field.indexId}>
                   <Input
@@ -160,9 +160,9 @@ const VariantEditor = ({
               tabIndex={0}
               className="inter-base-semibold mb-4 flex items-center"
             >
-              {"Prices"}
+              {"Ceny"}
               <span className="text-rose-50 mr-xsmall">*</span>
-              <IconTooltip content={"Variant prices"} />
+              <IconTooltip content={"Ceny wariantu"} />
             </label>
 
             <div className="grid grid-cols-1 gap-y-xsmall">
@@ -223,19 +223,19 @@ const VariantEditor = ({
               name="add-price"
               disabled={availableCurrencies?.length === 0}
             >
-              <PlusIcon size={20} /> Add a price
+              <PlusIcon size={20} /> Dodaj cenę
             </Button>
           </div>
           <div className="mb-8">
             <label className="inter-base-semibold flex items-center gap-xsmall">
-              {"Stock & Inventory"}
-              <IconTooltip content={"Stock and inventory information"} />
+              {"Magazyn"}
+              <IconTooltip content={"Infomracje o magazynie"} />
             </label>
             <div className="w-full mt-4 grid medium:grid-cols-2 grid-cols-1 gap-y-base gap-x-xsmall">
               <Input label="SKU" name="sku" placeholder="SKU" ref={register} />
               <Input label="EAN" name="ean" placeholder="EAN" ref={register} />
               <Input
-                label="Inventory quantity"
+                label="Dostępna ilość"
                 name="inventory_quantity"
                 placeholder="100"
                 type="number"
@@ -243,7 +243,7 @@ const VariantEditor = ({
               />
 
               <Input
-                label="UPC Barcode"
+                label="UPC kod kreskowy"
                 name="barcode"
                 placeholder="Barcode"
                 ref={register}
@@ -254,12 +254,12 @@ const VariantEditor = ({
               <div className="flex item-center gap-x-1.5">
                 <Checkbox
                   name="manage_inventory"
-                  label="Manage Inventory"
+                  label="Zarządzaj magazynem"
                   ref={register}
                 />
                 <IconTooltip
                   content={
-                    "When checked Medusa will regulate the inventory when orders and returns are made."
+                    "Ilość będzie regulowana na podstawie zamówień i zwrotów."
                   }
                 />
               </div>
@@ -267,11 +267,11 @@ const VariantEditor = ({
                 <Checkbox
                   name="allow_backorder"
                   ref={register}
-                  label="Allow backorders"
+                  label="Zazwól na zamówienia przy ilości 0"
                 />
                 <IconTooltip
                   content={
-                    "When checked the product will be available for purchase despite the product being sold out."
+                    "Jeżeli zaznaczone, produkt będzie można kupić nawet jeżeli nie będzie go w magazynie."
                   }
                 />
               </div>
@@ -280,63 +280,64 @@ const VariantEditor = ({
 
           <div className="mb-8">
             <label className="inter-base-semibold flex items-center gap-xsmall">
-              Dimensions <IconTooltip content={"Variant dimensions"} />
+              Wymiary <IconTooltip content={"Wymiary wariantu"} />
             </label>
             <div className="w-full mt-4 grid medium:grid-cols-2 grid-cols-1 gap-y-base gap-x-xsmall">
               <Input
-                label="Height"
-                placeholder="Product Height"
+                label="Wysokość"
+                placeholder="wysokość produktu"
                 name="height"
                 ref={register}
               />
               <Input
-                label="Width"
-                placeholder="Product Width"
+                label="Szerokość"
+                placeholder="szerokość produktu"
                 name="width"
                 ref={register}
               />
               <Input
-                label="Length"
+                label="Długość"
                 name="length"
-                placeholder="Product Length"
+                placeholder="długość produktu"
                 ref={register}
               />
               <Input
-                label="Weight"
+                label="Waga"
                 name="weight"
-                placeholder="Product Weight"
+                placeholder="waga produktu"
                 ref={register}
               />
             </div>
           </div>
           <div className="mb-8">
             <label className="inter-base-semibold flex items-center gap-xsmall">
-              Customs <IconTooltip content={"Variant customs information"} />
+              Dodatkowe{" "}
+              <IconTooltip content={"Dodatkowe informacje o wariancie"} />
             </label>
             <div className="w-full grid mt-4 medium:grid-cols-2 grid-cols-1 gap-y-base gap-x-xsmall">
               <Input
-                label="MID Code"
-                placeholder="MID Code"
+                label="Kod MID"
+                placeholder="MID"
                 name="mid_code"
                 ref={register}
               />
               <Input
-                label="HS Code"
-                placeholder="HS Code"
+                label="Kod HS"
+                placeholder="HS"
                 name="hs_code"
                 ref={register}
               />
               <Select
                 enableSearch
-                label={"Country of origin"}
+                label={"Kraj pochodzenia"}
                 options={countryOptions}
                 value={selectedCountry}
                 onChange={setSelectedCountry}
               />
               <Input
-                label="Material"
+                label="Materiał"
                 name="material"
-                placeholder="Material"
+                placeholder="Materiał"
                 ref={register}
               />
             </div>
@@ -350,7 +351,7 @@ const VariantEditor = ({
               size="small"
               variant="ghost"
             >
-              Cancel
+              Anuluj
             </Button>
             <Button
               onClick={handleSubmit(handleSave)}
@@ -359,7 +360,7 @@ const VariantEditor = ({
               size="small"
               variant="primary"
             >
-              Save
+              Zapisz
             </Button>
           </div>
         </Modal.Footer>

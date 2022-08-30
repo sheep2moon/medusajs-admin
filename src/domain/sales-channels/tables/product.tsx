@@ -195,7 +195,7 @@ export const ProductTable = forwardRef(
 
     const getActions = (id: string) => [
       {
-        label: "Details",
+        label: "Szczegóły",
         onClick: () => navigate(`/a/products/${id}`),
         icon: <DetailsIcon size={20} />,
       },

@@ -77,7 +77,7 @@ const AddProductsModal = ({
               totalCount={count}
               options={{
                 enableSearch: true,
-                searchPlaceholder: "Search by name or description...",
+                searchPlaceholder: "Szukaj po nazwie lub opisie...",
               }}
               {...params}
             />

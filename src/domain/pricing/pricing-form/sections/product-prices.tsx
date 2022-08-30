@@ -103,7 +103,7 @@ const ProductPrices = ({
         {onSearch && (
           <div className="mb-2">
             <InputField
-              placeholder="Search by name or SKU..."
+              placeholder="Szukaj po nazwie lub SKU..."
               startAdornment={<SearchIcon />}
               onChange={onChange}
             />
@@ -131,7 +131,7 @@ const ProductPrices = ({
           onClick={() => setShowAdd(true)}
         >
           <PlusIcon />
-          Add Products Manually
+          Dodaj produkty ręcznie
         </Button>
       </div>
       {/* {onFileChosen && (
@@ -161,7 +161,7 @@ const ProductPrices = ({
         <Modal open handleClose={unselect}>
           <Modal.Body>
             <Modal.Header handleClose={unselect}>
-              <h2 className="inter-xlarge-semibold">Edit Prices</h2>
+              <h2 className="inter-xlarge-semibold">Edytuj ceny</h2>
             </Modal.Header>
 
             <PriceOverrides

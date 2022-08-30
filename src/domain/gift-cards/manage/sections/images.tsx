@@ -8,7 +8,7 @@ import { useGiftCardForm } from "../form/gift-card-form-context"
 
 const columns = [
   {
-    Header: "Image",
+    Header: "Zdjęcie",
     accessor: "image",
     Cell: ({ cell }) => {
       return (
@@ -22,7 +22,7 @@ const columns = [
     },
   },
   {
-    Header: "File Name",
+    Header: "Nazwa pliku",
     accessor: "name",
     Cell: ({ cell }) => {
       return (
@@ -38,7 +38,7 @@ const columns = [
     },
   },
   {
-    Header: <div className="text-center">Thumbnail</div>,
+    Header: <div className="text-center">Miniaturka</div>,
     accessor: "thumbnail",
     Cell: ({ cell }) => {
       return (
@@ -63,7 +63,7 @@ const Images = () => {
   } = useGiftCardForm()
 
   return (
-    <BodyCard title="Images" subtitle="Add up to 10 images to your Gift Card">
+    <BodyCard title="Zdjęcia" subtitle="Dodaj maksymalnie 10 zdjęć">
       <div className="mt-base">
         <Controller
           name="thumbnail"
@@ -99,7 +99,7 @@ const Images = () => {
               nativeFile: file,
             })
           }}
-          placeholder="1200 x 1600 (3:4) recommended, up to 10MB each"
+          placeholder="1200 x 1600 (3:4) najlepeij, (png,jpg,jpeg) najlepiej do 1MB"
           filetypes={["png", "jpg", "jpeg"]}
           className="py-large"
         />

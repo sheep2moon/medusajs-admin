@@ -158,10 +158,10 @@ const RegionDetails = ({ id, onDelete, handleSelect }) => {
       },
       {
         onSuccess: () => {
-          notification("Success", "Successfully updated region", "success")
+          notification("Sukces", "Pomyślnie zaktualizowano region", "success")
         },
         onError: (error) => {
-          notification("Error", getErrorMessage(error), "error")
+          notification("Bląd", getErrorMessage(error), "error")
         },
       }
     )
@@ -174,7 +174,7 @@ const RegionDetails = ({ id, onDelete, handleSelect }) => {
 
   const handleDuplicate = () => {
     if (!region) {
-      notification("Error", "Region not found", "error")
+      notification("Błąd", "Nie znaleziono regionu", "error")
       return
     }
 
@@ -183,17 +183,17 @@ const RegionDetails = ({ id, onDelete, handleSelect }) => {
       payment_providers: region.payment_providers.map((p) => p.id),
       fulfillment_providers: region.fulfillment_providers.map((f) => f.id),
       countries: [], // As countries can't belong to more than one region at the same time we can just pass an empty array
-      name: `${region.name} Copy`,
+      name: `${region.name} Kopiuj`,
       tax_rate: region.tax_rate,
     }
 
     createRegion.mutate(payload, {
       onSuccess: ({ region }) => {
-        notification("Success", "Successfully duplicated region", "success")
+        notification("Sukces", "Pomyślnie zduplikowano region", "success")
         handleSelect(region.id)
       },
       onError: (error) => {
-        notification("Error", getErrorMessage(error), "error")
+        notification("Błąd", getErrorMessage(error), "error")
       },
     })
   }
@@ -206,7 +206,7 @@ const RegionDetails = ({ id, onDelete, handleSelect }) => {
         }
       },
       onError: (error) => {
-        notification("Error", getErrorMessage(error), "error")
+        notification("Błąd", getErrorMessage(error), "error")
       },
     })
   }
@@ -224,16 +224,16 @@ const RegionDetails = ({ id, onDelete, handleSelect }) => {
   return (
     <>
       <BodyCard
-        title="Details"
-        events={[{ label: "Save", onClick: handleSubmit(onSave) }]}
+        title="Szczegóły"
+        events={[{ label: "Zapisz", onClick: handleSubmit(onSave) }]}
         actionables={[
           {
-            label: "Duplicate Region",
+            label: "Zduplikuj region",
             onClick: handleDuplicate,
             icon: <DuplicateIcon />,
           },
           {
-            label: "Delete Region",
+            label: "Usuń region",
             onClick: () => setShowDanger(true),
             icon: <TrashIcon />,
             variant: "danger",
@@ -252,8 +252,8 @@ const RegionDetails = ({ id, onDelete, handleSelect }) => {
               <div className="w-full">
                 <Input
                   name="name"
-                  label="Name"
-                  placeholder="Region name..."
+                  label="Nazwa"
+                  placeholder="Nazwa regionu..."
                   ref={register({ required: true })}
                   className="mb-base"
                 />
@@ -266,7 +266,7 @@ const RegionDetails = ({ id, onDelete, handleSelect }) => {
                 <Select
                   isMultiSelect
                   enableSearch
-                  label="Countries"
+                  label="Kraje"
                   hasSelectAll
                   options={countryOptions}
                   value={countries}
@@ -279,7 +279,7 @@ const RegionDetails = ({ id, onDelete, handleSelect }) => {
                     onChange={handlePaymentChange}
                     options={paymentOptions}
                     value={paymentProviders}
-                    label="Payment Providers"
+                    label="Dostawcy płatności"
                     enableSearch
                     className="mb-base"
                   />
@@ -289,7 +289,7 @@ const RegionDetails = ({ id, onDelete, handleSelect }) => {
                     onChange={handleFulfillmentChange}
                     options={fulfillmentOptions}
                     value={fulfillmentProviders}
-                    label="Fulfillment Providers"
+                    label="Dostawcy realizacji"
                     enableSearch
                     isMultiSelect
                   />
@@ -307,11 +307,11 @@ const RegionDetails = ({ id, onDelete, handleSelect }) => {
       {showDanger && (
         <DeletePrompt
           handleClose={() => setShowDanger(!showDanger)}
-          text="Are you sure you want to delete this region from your Medusa Store?"
-          heading="Delete region"
+          text="Czy napewno chcesz usunąć ten region?"
+          heading="Usuń region"
           onDelete={handleDelete}
-          successText="Successfully deleted region"
-          confirmText="Yes, delete"
+          successText="Pomyślnie usunięto region"
+          confirmText="Tak, usuń"
         />
       )}
     </>

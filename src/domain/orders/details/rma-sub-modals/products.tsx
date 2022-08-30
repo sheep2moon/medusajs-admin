@@ -62,7 +62,7 @@ const RMASelectProductSubModal: React.FC<RMASelectProductSubModalProps> = ({
   const columns = useMemo(() => {
     return [
       {
-        Header: "Name",
+        Header: "Nazwa",
         accessor: "title",
         Cell: ({ row: { original } }) => {
           return (
@@ -217,7 +217,7 @@ const RMASelectProductSubModal: React.FC<RMASelectProductSubModalProps> = ({
           <Table
             immediateSearchFocus
             enableSearch
-            searchPlaceholder="Search Products.."
+            searchPlaceholder="Szukaj produktów.."
             handleSearch={handleSearch}
             {...getTableProps()}
           >
@@ -247,7 +247,7 @@ const RMASelectProductSubModal: React.FC<RMASelectProductSubModalProps> = ({
             limit={PAGE_SIZE}
             offset={offset}
             pageSize={offset + rows.length}
-            title="Products"
+            title="Produkty"
             currentPage={pageIndex + 1}
             pageCount={pageCount}
             nextPage={handleNext}
@@ -265,7 +265,7 @@ const RMASelectProductSubModal: React.FC<RMASelectProductSubModalProps> = ({
             className="w-[112px]"
             onClick={() => pop()}
           >
-            Back
+            Wstecz
           </Button>
           <Button
             variant="primary"
@@ -273,7 +273,7 @@ const RMASelectProductSubModal: React.FC<RMASelectProductSubModalProps> = ({
             size="small"
             onClick={handleSubmit}
           >
-            Add
+            Dodaj
           </Button>
         </div>
       </Modal.Footer>

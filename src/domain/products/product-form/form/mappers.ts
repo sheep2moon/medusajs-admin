@@ -61,12 +61,12 @@ export const formValuesToCreateProductMapper = (
         inventory_quantity: values?.inventory_quantity
           ? parseInt(values?.inventory_quantity, 10)
           : 0,
-        options: [{ value: "Default Variant" }],
+        options: [{ value: "Domyślny wariant" }],
         prices: values?.prices ? values.prices.map((p) => p.price) : [],
         material: values.material,
       },
     ]
-    values.options = [{ title: "Default Option" }]
+    values.options = [{ title: "Opcja domyślna" }]
   } else {
     // Product with variants
     values.variants = values?.variants.map((v) => ({

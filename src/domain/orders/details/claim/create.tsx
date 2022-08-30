@@ -251,11 +251,11 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
     mutate(data, {
       onSuccess: () => {
         refetch()
-        notification("Success", "Successfully created claim", "success")
+        notification("Sukces", "Successfully created claim", "success")
         onDismiss()
       },
       onError: (error) => {
-        notification("Error", getErrorMessage(error), "error")
+        notification("Błąd", getErrorMessage(error), "error")
       },
     })
   }
@@ -318,11 +318,11 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
     <LayeredModal context={layeredModalContext} handleClose={onDismiss}>
       <Modal.Body>
         <Modal.Header handleClose={onDismiss}>
-          <h2 className="inter-xlarge-semibold">Create Claim</h2>
+          <h2 className="inter-xlarge-semibold">Stwórz reklamacje</h2>
         </Modal.Header>
         <Modal.Content>
           <div>
-            <h3 className="inter-base-semibold">Items to claim</h3>
+            <h3 className="inter-base-semibold">Przedmioty do reklamacji</h3>
             <RMASelectProductTable
               order={order}
               allItems={allItems}
@@ -334,7 +334,7 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
           </div>
           <div className="mt-4">
             <h3 className="inter-base-semibold">
-              Shipping Return
+              Zwrot
               {returnShippingMethod && (
                 <span className="text-grey-40 inter-base-regular">
                   ({returnShippingMethod.region.name})
@@ -343,7 +343,7 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
             </h3>
             <Select
               clearSelected
-              label="Shipping Method"
+              label="Metoda dostawy"
               className="mt-2"
               placeholder="Add a shipping method"
               value={
@@ -407,7 +407,7 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
                   <div className="w-3 h-3 bg-violet-60 rounded-full"></div>
                 )}
               </div>
-              Replace
+              Zamień
             </div>
             <div
               className="cursor-pointer items-center flex"
@@ -428,13 +428,13 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
                   <div className="w-3 h-3 bg-violet-60 rounded-full"></div>
                 )}
               </div>
-              Refund
+              Zwrot
             </div>
           </div>
           {isReplace && (
             <div className="mt-8">
               <div className="flex justify-between items-center">
-                <h3 className="inter-base-semibold ">Items to send</h3>
+                <h3 className="inter-base-semibold ">Przedmioty do wysłania</h3>
                 {itemsToAdd.length === 0 ? (
                   <Button
                     variant="ghost"
@@ -450,7 +450,7 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
                       )
                     }}
                   >
-                    Add Product
+                    Dodaj produkt
                   </Button>
                 ) : (
                   <></>
@@ -480,13 +480,13 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
                         )
                       }}
                     >
-                      Add Product
+                      Dodaj produkt
                     </Button>
                   </div>
                 </>
               )}
               <div className="mt-8">
-                <span className="inter-base-semibold">Shipping Address</span>
+                <span className="inter-base-semibold">Adres dostawy</span>
                 {shippingAddress ? (
                   <>
                     <div className="flex w-full inter-small-regular text-grey-50">
@@ -509,7 +509,7 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
                         size="small"
                         className="border border-grey-20"
                       >
-                        Edit
+                        Edytuj
                       </Button>
                     </div>
                   </>
@@ -535,14 +535,14 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
                         size="small"
                         className="border border-grey-20"
                       >
-                        Ship to a different address
+                        Wyślij na inny adres
                       </Button>
                     </div>
                   </div>
                 )}
               </div>
               <div>
-                <h3 className="inter-base-semibold mt-8">Shipping new</h3>
+                <h3 className="inter-base-semibold mt-8">Nowa dostawa</h3>
                 <span className="inter-small-regular text-grey-50">
                   Shipping new items is free by default. Use custom price, if
                   this is not the case
@@ -655,7 +655,7 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
                 type="checkbox"
               />
               <span className="ml-3 flex items-center text-grey-90 gap-x-xsmall">
-                Send notifications
+                Wyślij powiadomienie
                 <IconTooltip content="Notify customer of created return" />
               </span>
             </div>
@@ -667,7 +667,7 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
                 size="small"
                 variant="ghost"
               >
-                Back
+                Wstecz
               </Button>
               <Button
                 onClick={onSubmit}
@@ -677,7 +677,7 @@ const ClaimMenu: React.FC<ClaimMenuProps> = ({ order, onDismiss }) => {
                 size="small"
                 variant="primary"
               >
-                Complete
+                Zakończ
               </Button>
             </div>
           </div>

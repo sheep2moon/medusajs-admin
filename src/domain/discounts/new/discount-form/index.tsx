@@ -50,7 +50,7 @@ const DiscountForm: React.FC<DiscountFormProps> = ({
           handleReset()
         })
         .catch((error) => {
-          notification("Error", getErrorMessage(error), "error")
+          notification("Błąd", getErrorMessage(error), "error")
         })
     } else {
       closeFormModal()
@@ -64,7 +64,7 @@ const DiscountForm: React.FC<DiscountFormProps> = ({
       closeFormModal()
       handleReset()
     } catch (error) {
-      notification("Error", getErrorMessage(error), "error")
+      notification("Błąd", getErrorMessage(error), "error")
     }
   }
 
@@ -87,7 +87,7 @@ const DiscountForm: React.FC<DiscountFormProps> = ({
               variant="ghost"
               className="border rounded-rounded"
             >
-              Save as draft
+              Zapisz jako plan
             </Button>
             <Button
               size="small"
@@ -95,7 +95,7 @@ const DiscountForm: React.FC<DiscountFormProps> = ({
               onClick={handleSubmit(submitCTA)}
               className="rounded-rounded"
             >
-              {isEdit ? "Save changes" : "Publish discount"}
+              {isEdit ? "Zapisz zmiany" : "Stwórz zniżkę"}
             </Button>
           </div>
         </div>
@@ -113,15 +113,15 @@ const DiscountForm: React.FC<DiscountFormProps> = ({
             >
               <Accordion.Item
                 forceMountContent
-                title="Discount type"
+                title="Typ zniżki"
                 required
-                tooltip="Select a discount type"
+                tooltip="Wybierz typ zniżki"
                 value="promotion-type"
               >
                 <PromotionType />
               </Accordion.Item>
               <Accordion.Item
-                title="General"
+                title="Podstawowe"
                 required
                 value="general"
                 forceMountContent
@@ -130,18 +130,18 @@ const DiscountForm: React.FC<DiscountFormProps> = ({
               </Accordion.Item>
               <Accordion.Item
                 forceMountContent
-                title="Configuration"
+                title="Konfiguracja"
                 value="configuration"
-                description="Discount code applies from you hit the publish button and forever if left untouched."
+                description="Zniżka będzie aktywna od momentu stworzenia na zawsze."
               >
                 <Configuration promotion={discount} isEdit={isEdit} />
               </Accordion.Item>
               <Accordion.Item
                 forceMountContent
-                title="Conditions"
-                description="Discount code apply to all products if left untouched."
+                title="Warunki"
+                description="Jeśli niezmienione, zniżka zostanie zastosowana do wszystkich produktów ."
                 value="conditions"
-                tooltip="Add conditions to your Discount"
+                tooltip="Dodaj warunki do zniżki"
               >
                 <Conditions discount={discount} />
               </Accordion.Item>

@@ -37,7 +37,8 @@ const useProductActions = (product) => {
       icon: <EditIcon size={20} />,
     },
     {
-      label: product.status === "published" ? "Unpublish" : "Publish",
+      label:
+        product.status === "published" ? "Nieopublikowany" : "Opublikowany",
       onClick: () => {
         const newStatus = product.status === "published" ? "draft" : "published"
         updateProduct.mutate(
@@ -47,15 +48,17 @@ const useProductActions = (product) => {
           {
             onSuccess: () => {
               notification(
-                "Success",
-                `Successfully ${
-                  product.status === "published" ? "unpublished" : "published"
-                } product`,
+                "Sukces",
+                `Pomyślnie zmieniono status produktu na ${
+                  product.status === "published"
+                    ? "nieopublikowany"
+                    : "opublikowany"
+                }`,
                 "success"
               )
             },
             onError: (err) =>
-              notification("Error", getErrorMessage(err), "error"),
+              notification("Błąd", getErrorMessage(err), "error"),
           }
         )
       },
@@ -67,12 +70,12 @@ const useProductActions = (product) => {
         ),
     },
     {
-      label: "Duplicate",
+      label: "Duplikat",
       onClick: () => copyProduct(product),
       icon: <DuplicateIcon size={20} />,
     },
     {
-      label: "Delete",
+      label: "Usuń",
       variant: "danger",
       onClick: handleDelete,
       icon: <TrashIcon size={20} />,

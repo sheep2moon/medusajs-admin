@@ -32,8 +32,8 @@ const FormToasterContainer: React.FC<FormToasterContainerProps> & {
   children,
   toast,
   isLoading = false,
-  loadingMessage = "Hang on, this may take a few moments...",
-  unsavedChangesMessage = "You have unsaved changes",
+  loadingMessage = "Poczekaj, to może zająć chwilę...",
+  unsavedChangesMessage = "Masz niezapisane zmiany",
   icon = <RefreshIcon size="20" />,
 }) => {
   const content = useMemo(() => {

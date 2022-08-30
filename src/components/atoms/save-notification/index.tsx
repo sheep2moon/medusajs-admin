@@ -19,8 +19,8 @@ type SaveNotificationProps = {
 const SaveNotification: React.FC<SaveNotificationProps> = ({
   toast,
   icon,
-  title = "Unsaved changes",
-  message = "You have unsaved changes. Do you want to save and publish or discard them?",
+  title = "Niezapisane zmiany",
+  message = "Wykryto niezapisane zmiany. Chcesz je zapisać czy odrzucić?",
   onSave,
   reset,
 }) => {
@@ -59,13 +59,13 @@ const SaveNotification: React.FC<SaveNotificationProps> = ({
           onClick={handleSave}
           className="inter-small-semibold flex items-center justify-center h-1/2 border-b border-grey-20 px-base text-violet-60"
         >
-          Publish
+          Opublikuj
         </button>
         <button
           className="inter-small-semibold flex items-center justify-center h-1/2 px-base"
           onClick={onDismiss}
         >
-          Discard
+          Odrzuć
         </button>
       </div>
     </ToasterContainer>

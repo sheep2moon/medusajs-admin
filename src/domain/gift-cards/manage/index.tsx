@@ -56,7 +56,11 @@ const ManageGiftCard: React.FC<RouteComponentProps> = () => {
         })
         .catch((err) => {
           setSubmitting(false)
-          notification("Error uploading images", getErrorMessage(err), "error")
+          notification(
+            "Błąd przy przesyłaniu obrazów",
+            getErrorMessage(err),
+            "error"
+          )
           return
         })
     }
@@ -69,11 +73,11 @@ const ManageGiftCard: React.FC<RouteComponentProps> = () => {
     updateGiftCard.mutate(formValuesToUpdateGiftCardMapper(newData), {
       onSuccess: () => {
         setSubmitting(false)
-        notification("Success", "Product updated successfully", "success")
+        notification("Sukces", "Produkt zaktualizowano pomyślnie", "success")
       },
       onError: (error) => {
         setSubmitting(false)
-        notification("Error", getErrorMessage(error), "error")
+        notification("Błąd", getErrorMessage(error), "error")
       },
     })
   }

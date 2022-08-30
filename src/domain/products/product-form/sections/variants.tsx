@@ -102,29 +102,29 @@ const Variants = ({ isEdit, product }) => {
 
     createVariant.mutate(newVariant, {
       onSuccess: () => {
-        notification("Success", "Successfully added a variant", "success")
+        notification("Sukces", "Pomyślnie dodano wariant", "success")
         setShowAddVariantModal(false)
       },
       onError: (err) => {
-        notification("Error", getErrorMessage(err), "error")
+        notification("Błąd", getErrorMessage(err), "error")
       },
     })
   }
 
   return (
     <BodyCard
-      title="Variants"
-      subtitle="Add variations of this product. Offer your customers different options for price, color, format, size, shape, etc."
+      title="Warianty"
+      subtitle="Dodaj różne warianty tego produktu. Naprzykład rozmiar, kolor, wielkość."
       forceDropdown={true}
       actionables={
         isEdit && [
           {
-            label: "Add variant",
+            label: "Dodaj wariant",
             onClick: () => setShowAddVariantModal(true),
             icon: <PlusIcon size={20} />,
           },
           {
-            label: "Edit options",
+            label: "Edytuj opcje",
             onClick: () => setShowAddOption(true),
             icon: <EditIcon size={20} />,
           },
@@ -136,7 +136,7 @@ const Variants = ({ isEdit, product }) => {
           <>
             <div className="flex items-center mb-base">
               <h6 className="inter-base-semibold text-grey-90 mr-1.5">
-                Product Options
+                Opcje produktu
               </h6>
             </div>
             <div className="flex flex-col gap-y-base max-w-[570px] w-full mb-4">
@@ -169,13 +169,13 @@ const Variants = ({ isEdit, product }) => {
               ))}
               <div className="mt-xs">
                 <Button onClick={handleAddOption} size="small" variant="ghost">
-                  + Add an option
+                  + Dodaj opcje
                 </Button>
               </div>
             </div>
             <div className="flex justify-center mb-base flex-col space-y-2">
               <div className="flex space-x-2">
-                <h6 className="inter-base-semibold text-grey-90">Variants</h6>
+                <h6 className="inter-base-semibold text-grey-90">Warianty</h6>
                 <IconTooltip content="Add product options to create variants" />
               </div>
             </div>
@@ -199,7 +199,7 @@ const Variants = ({ isEdit, product }) => {
         <VariantEditor
           onCancel={() => setShowAddVariantModal(false)}
           onSubmit={handleAddVariant}
-          title="Add variant"
+          title="Dodaj wariant"
           optionsMap={buildOptionsMap(product)}
         />
       )}

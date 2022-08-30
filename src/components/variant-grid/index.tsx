@@ -54,11 +54,11 @@ const VariantGrid = ({ product, variants, edit, onVariantsChange }) => {
       { variant_id: selectedVariant?.id, ...data },
       {
         onSuccess: () => {
-          notification("Success", "Successfully update variant", "success")
+          notification("Sukces", "Pomyślnie zaktualizowano wariant", "success")
           setSelectedVariant(null)
         },
         onError: (err) => {
-          notification("Error", getErrorMessage(err), "error")
+          notification("Błąd", getErrorMessage(err), "error")
         },
       }
     )
@@ -66,8 +66,8 @@ const VariantGrid = ({ product, variants, edit, onVariantsChange }) => {
 
   const handleDeleteVariant = async (variant) => {
     const shouldDelete = await dialog({
-      heading: "Delete product variant",
-      text: "Are you sure?",
+      heading: "Usuń wariant produktu",
+      text: "Jesteś pewien?",
     })
 
     if (shouldDelete) {
@@ -80,11 +80,11 @@ const VariantGrid = ({ product, variants, edit, onVariantsChange }) => {
       { ...variant },
       {
         onSuccess: () => {
-          notification("Success", "Successfully created variant", "success")
+          notification("Sukces", "Pomyślnie stworzono wariant", "success")
           setSelectedVariant(null)
         },
         onError: (err) => {
-          notification("Error", getErrorMessage(err), "error")
+          notification("Błąd", getErrorMessage(err), "error")
         },
       }
     )
@@ -93,12 +93,12 @@ const VariantGrid = ({ product, variants, edit, onVariantsChange }) => {
   const editVariantActions = (variant) => {
     return [
       {
-        label: "Edit",
+        label: "Edytuj",
         icon: <EditIcon size={20} />,
         onClick: () => setSelectedVariant(variant),
       },
       {
-        label: "Duplicate",
+        label: "Duplikat",
         icon: <DuplicateIcon size={20} />,
         onClick: () => {
           setSelectedVariant(variant)
@@ -106,7 +106,7 @@ const VariantGrid = ({ product, variants, edit, onVariantsChange }) => {
         },
       },
       {
-        label: "Delete",
+        label: "Usuń",
         icon: <TrashIcon size={20} />,
         onClick: () => handleDeleteVariant(variant),
         variant: "danger",
@@ -164,7 +164,7 @@ const VariantGrid = ({ product, variants, edit, onVariantsChange }) => {
           onCancel={() => setSelectedVariant(null)}
           onSubmit={isDuplicate ? handleDuplicateVariant : handleUpdateVariant}
           optionsMap={buildOptionsMap(product, selectedVariant)}
-          title="Edit variant"
+          title="Edytuj wariant"
         />
       )}
     </>

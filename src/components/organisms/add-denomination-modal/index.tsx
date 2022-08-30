@@ -90,20 +90,20 @@ const AddDenominationModal: React.FC<AddDenominationModalProps> = ({
       },
       {
         onSuccess: () => {
-          notification("Success", "Denomination added successfully", "success")
+          notification("Sukces", "Nominał dodany pomyślnie", "success")
           handleClose()
         },
         onError: (error) => {
           const errorMessage = () => {
             // @ts-ignore
             if (error.response?.data?.type === "duplicate_error") {
-              return `A denomination with that default value already exists`
+              return `Nominał z wartością domyślną już istnieje`
             } else {
               return getErrorMessage(error)
             }
           }
 
-          notification("Error", errorMessage(), "error")
+          notification("Błąd", errorMessage(), "error")
         },
       }
     )
@@ -114,13 +114,13 @@ const AddDenominationModal: React.FC<AddDenominationModalProps> = ({
       <form onSubmit={handleSubmit(onSubmit)}>
         <Modal.Body isLargeModal>
           <Modal.Header handleClose={handleClose}>
-            <span className="inter-xlarge-semibold">Add Denomination</span>
+            <span className="inter-xlarge-semibold">Dodaj nominał</span>
           </Modal.Header>
           <Modal.Content>
             <div className="flex-1 mb-xlarge">
               <div className="flex gap-x-2 mb-base">
-                <h3 className="inter-base-semibold">Default Value</h3>
-                <IconTooltip content="This is the denomination in your store's default currency" />
+                <h3 className="inter-base-semibold">Wartość domyślna</h3>
+                <IconTooltip content="Domyślny nominał" />
               </div>
               <Controller
                 control={control}
@@ -133,7 +133,7 @@ const AddDenominationModal: React.FC<AddDenominationModalProps> = ({
                       size="medium"
                     >
                       <CurrencyInput.AmountInput
-                        label="Amount"
+                        label="Wartość"
                         amount={value}
                         onChange={onChange}
                       />
@@ -144,8 +144,8 @@ const AddDenominationModal: React.FC<AddDenominationModalProps> = ({
             </div>
             <div>
               <div className="flex gap-x-2 mb-base">
-                <h3 className="inter-base-semibold">Other Values</h3>
-                <IconTooltip content="Here you can add values in other currencies" />
+                <h3 className="inter-base-semibold">Inne wartości</h3>
+                <IconTooltip content="Tutaj możesz dodać wartości w innych walutach" />
               </div>
               <div className="flex items-center gap-y-xsmall">
                 {fields.map((field, index) => {
@@ -177,7 +177,7 @@ const AddDenominationModal: React.FC<AddDenominationModalProps> = ({
                                 }
                               >
                                 <CurrencyInput.AmountInput
-                                  label="Amount"
+                                  label="Wartość"
                                   onChange={(amount) =>
                                     onChange({ ...value, amount })
                                   }
@@ -209,7 +209,7 @@ const AddDenominationModal: React.FC<AddDenominationModalProps> = ({
                   disabled={availableCurrencies?.length === 0}
                 >
                   <PlusIcon size={20} />
-                  Add a price
+                  Dodaj cenę
                 </Button>
               </div>
             </div>
@@ -222,7 +222,7 @@ const AddDenominationModal: React.FC<AddDenominationModalProps> = ({
                 onClick={handleClose}
                 className="mr-2 min-w-[130px] justify-center"
               >
-                Cancel
+                Anuluj
               </Button>
               <Button
                 variant="primary"
@@ -230,7 +230,7 @@ const AddDenominationModal: React.FC<AddDenominationModalProps> = ({
                 className="mr-2 min-w-[130px] justify-center"
                 type="submit"
               >
-                Save
+                Zapisz
               </Button>
             </div>
           </Modal.Footer>

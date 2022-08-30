@@ -82,7 +82,7 @@ const useProductTableColumn = ({ setTileView, setListView, showList }) => {
         },
       },
       {
-        Header: "Collection",
+        Header: "Kolekcja",
         accessor: "collection", // accessor is the "key" in the data
         Cell: ({ cell: { value } }) => {
           return <div>{value?.title || "-"}</div>
@@ -94,17 +94,17 @@ const useProductTableColumn = ({ setTileView, setListView, showList }) => {
         Cell: ({ cell: { value } }) => getProductStatus(value),
       },
       {
-        Header: "Availability",
+        Header: "Dostępność",
         accessor: "sales_channels",
         Cell: ({ cell: { value } }) => getProductSalesChannels(value),
       },
       {
-        Header: "Inventory",
+        Header: "Magazyn",
         accessor: "variants",
         Cell: ({ cell: { value } }) => (
           <div>
             {value.reduce((acc, next) => acc + next.inventory_quantity, 0)}
-            {" in stock for "}
+            {" w magazynie "}
             {value.length} variant(s)
           </div>
         ),

@@ -189,7 +189,7 @@ const DiscountTable: React.FC = () => {
         limit={queryObject.limit}
         offset={queryObject.offset}
         pageSize={queryObject.offset + rows.length}
-        title="Discounts"
+        title="Zniżki"
         currentPage={pageIndex + 1}
         pageCount={pageCount}
         nextPage={handleNext}

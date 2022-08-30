@@ -22,8 +22,8 @@ const usePromotionActions = (promotion) => {
 
   const handleDelete = async () => {
     const shouldDelete = await dialog({
-      heading: "Delete Discount",
-      text: "Are you sure you want to delete this Discount?",
+      heading: "Usuń zniżkę",
+      text: "Napewno usunąć zniżke?",
     })
 
     if (shouldDelete) {
@@ -34,12 +34,12 @@ const usePromotionActions = (promotion) => {
   const getRowActions = () => {
     return [
       {
-        label: "Edit",
+        label: "Edytuj",
         icon: <EditIcon size={20} />,
         onClick: () => navigate(`/a/discounts/${promotion.id}`),
       },
       {
-        label: promotion.is_disabled ? "Publish" : "Unpublish",
+        label: promotion.is_disabled ? "Aktywuj" : "Dezaktywuj",
         icon: promotion.is_disabled ? (
           <PublishIcon size={20} />
         ) : (
@@ -53,26 +53,26 @@ const usePromotionActions = (promotion) => {
             {
               onSuccess: () => {
                 notification(
-                  "Success",
-                  `Successfully ${
-                    promotion.is_disabled ? "published" : "unpublished"
-                  } discount`,
+                  "Sukces",
+                  `Pomyślnie ${
+                    promotion.is_disabled ? "aktywowano" : "dezaktywowano"
+                  } zniżke`,
                   "success"
                 )
               },
               onError: (err) =>
-                notification("Error", getErrorMessage(err), "error"),
+                notification("Błąd", getErrorMessage(err), "error"),
             }
           )
         },
       },
       {
-        label: "Duplicate",
+        label: "Duplikat",
         icon: <DuplicateIcon size={20} />,
         onClick: () => copyPromotion(promotion),
       },
       {
-        label: "Delete",
+        label: "Usuń",
         icon: <TrashIcon size={20} />,
         variant: "danger",
         onClick: handleDelete,
