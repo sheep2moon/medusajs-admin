@@ -140,8 +140,8 @@ const DraftOrderDetails = ({ id }) => {
   return (
     <div>
       <Breadcrumb
-        currentPage={"Draft Order Details"}
-        previousBreadcrumb={"Draft Orders"}
+        currentPage={"Szczegóły planu zamówienia"}
+        previousBreadcrumb={"Plany zamówienia"}
         previousRoute="/a/draft-orders"
       />
       {isLoading || !draft_order ? (
@@ -176,14 +176,14 @@ const DraftOrderDetails = ({ id }) => {
                 draft_order?.status === "completed"
                   ? [
                       {
-                        label: "Go to Order",
+                        label: "Idź do zamówienia",
                         icon: null,
                         onClick: () => console.log("Should not be here"),
                       },
                     ]
                   : [
                       {
-                        label: "Cancel Draft Order",
+                        label: "Anuluj plan zamówienia",
                         icon: null,
                         // icon: <CancelIcon size={"20"} />,
                         variant: "danger",
@@ -206,13 +206,13 @@ const DraftOrderDetails = ({ id }) => {
                 </div>
                 <div className="flex flex-col pl-6">
                   <div className="inter-smaller-regular text-grey-50 mb-1">
-                    Phone
+                    Telefon
                   </div>
                   <div>{cart?.shipping_address?.phone || ""}</div>
                 </div>
                 <div className="flex flex-col pl-6">
                   <div className="inter-smaller-regular text-grey-50 mb-1">
-                    Amount ({region?.currency_code.toUpperCase()})
+                    Wartość ({region?.currency_code.toUpperCase()})
                   </div>
                   <div>
                     {formatAmountWithSymbol({
@@ -312,24 +312,24 @@ const DraftOrderDetails = ({ id }) => {
                 <DisplayTotal
                   currency={region?.currency_code}
                   totalAmount={cart?.shipping_total}
-                  totalTitle={"Shipping"}
+                  totalTitle={"Dostawa"}
                 />
                 <DisplayTotal
                   currency={region?.currency_code}
                   totalAmount={cart?.tax_total}
-                  totalTitle={`Tax`}
+                  totalTitle={`Podatek`}
                 />
                 <DisplayTotal
                   currency={region?.currency_code}
                   variant="large"
                   totalAmount={cart?.total}
-                  totalTitle={`Total`}
+                  totalTitle={`Łącznie`}
                 />
               </div>
             </BodyCard>
             <BodyCard
               className={"w-full mb-4 min-h-0 h-auto"}
-              title="Payment"
+              title="Płatność"
               customActionable={
                 draft_order?.status !== "completed" && <PaymentActionables />
               }
@@ -338,27 +338,27 @@ const DraftOrderDetails = ({ id }) => {
                 <DisplayTotal
                   currency={region?.currency_code}
                   totalAmount={cart?.subtotal}
-                  totalTitle={"Subtotal"}
+                  totalTitle={"Łączna wartość"}
                 />
                 <DisplayTotal
                   currency={region?.currency_code}
                   totalAmount={cart?.shipping_total}
-                  totalTitle={"Shipping"}
+                  totalTitle={"Dostawa"}
                 />
                 <DisplayTotal
                   currency={region?.currency_code}
                   totalAmount={cart?.tax_total}
-                  totalTitle={"Tax"}
+                  totalTitle={"Podatek"}
                 />
                 <DisplayTotal
                   variant="bold"
                   currency={region?.currency_code}
                   totalAmount={cart?.total}
-                  totalTitle={"Total to pay"}
+                  totalTitle={"Łącznie do zapłaty"}
                 />
                 {draft_order?.status !== "completed" && (
                   <div className="text-grey-50 inter-small-regular w-full flex items-center mt-5">
-                    <span className="mr-2.5">Payment link:</span>
+                    <span className="mr-2.5">Link do płatności:</span>
                     {store?.payment_link_template ? (
                       <CopyToClipboard
                         value={paymentLink}
@@ -366,7 +366,7 @@ const DraftOrderDetails = ({ id }) => {
                         successDuration={1000}
                       />
                     ) : (
-                      "Configure payment link in store settings"
+                      "Konfiguruj link płatności w ustawieniach sklepu"
                     )}
                   </div>
                 )}
@@ -377,14 +377,14 @@ const DraftOrderDetails = ({ id }) => {
                 {cart?.shipping_methods.map((method) => (
                   <div className="flex flex-col">
                     <span className="inter-small-regular text-grey-50">
-                      Shipping Method
+                      Metoda dostawy
                     </span>
                     <span className="inter-small-regular text-grey-90 mt-2">
                       {method?.shipping_option.name || ""}
                     </span>
                     <div className="flex flex-col min-h-[100px] mt-8 bg-grey-5 px-3 py-2 h-full">
                       <span className="inter-base-semibold">
-                        Data{" "}
+                        Dane{" "}
                         <span className="text-grey-50 inter-base-regular">
                           (1 item)
                         </span>
@@ -427,7 +427,7 @@ const DraftOrderDetails = ({ id }) => {
                   },
                 },
                 {
-                  label: "Go to Customer",
+                  label: "Idź do klienta",
                   icon: <DetailsIcon size={"20"} />, // TODO: Change to Contact icon
                   onClick: () => navigate(`/a/customers/${cart?.customer.id}`),
                 },
@@ -455,7 +455,7 @@ const DraftOrderDetails = ({ id }) => {
                 <div className="flex mt-6 space-x-6 divide-x">
                   <div className="flex flex-col">
                     <div className="inter-small-regular text-grey-50 mb-1">
-                      Contact
+                      Kontakt
                     </div>
                     <div className="flex flex-col inter-small-regular">
                       <span>{cart?.email}</span>
@@ -463,11 +463,11 @@ const DraftOrderDetails = ({ id }) => {
                     </div>
                   </div>
                   <FormattedAddress
-                    title={"Shipping"}
+                    title={"Dostawa"}
                     addr={cart?.shipping_address}
                   />
                   <FormattedAddress
-                    title={"Billing"}
+                    title={"Rozliczenie"}
                     addr={cart?.billing_address}
                   />
                 </div>
@@ -475,7 +475,7 @@ const DraftOrderDetails = ({ id }) => {
             </BodyCard>
             <BodyCard
               className={"w-full mb-4 min-h-0 h-auto"}
-              title="Raw Draft Order"
+              title="PlanZamowienia-raw"
             >
               <ReactJson
                 style={{ marginTop: "15px" }}
@@ -500,11 +500,11 @@ const DraftOrderDetails = ({ id }) => {
       state variables for showing different prompts */}
       {deletePromptData.show && (
         <DeletePrompt
-          text={"Are you sure?"}
-          heading={`Remove ${deletePromptData?.resource}`}
+          text={"Jesteś pewien?"}
+          heading={`Usuń ${deletePromptData?.resource}`}
           successText={`${
-            deletePromptData?.resource || "Resource"
-          } has been removed`}
+            deletePromptData?.resource || "Zasób"
+          } został usunięty`}
           onDelete={() => deletePromptData.onDelete()}
           handleClose={() => setDeletePromptData(initDeleteState)}
         />

@@ -267,7 +267,7 @@ function UploadModal(props: UploadModalProps) {
               size="small"
               onClick={onClose}
             >
-              Cancel
+              Anuluj
             </Button>
             <div className="flex gap-2">
               <Button
@@ -277,7 +277,7 @@ function UploadModal(props: UploadModalProps) {
                 className="text-small text-rose-50"
                 onClick={console.log}
               >
-                Override existing list
+                Nadpisz istniejącą listę
               </Button>
 
               <Button
@@ -287,7 +287,7 @@ function UploadModal(props: UploadModalProps) {
                 className="text-small"
                 onClick={console.log}
               >
-                Add to existing list
+                Dodaj do istniejącej listy
               </Button>
             </div>
           </div>

@@ -12,7 +12,7 @@ const OrderCanceled: React.FC<OrderCanceledProps> = ({ event }) => {
     icon: <CancelIcon size={20} />,
     iconColor: EventIconColor.RED,
     time: event.time,
-    title: "Order Canceled",
+    title: "Zamówienie anulowane",
   }
   return <EventContainer {...args} />
 }

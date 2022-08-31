@@ -204,11 +204,11 @@ const SwapMenu: React.FC<SwapMenuProps> = ({ order, onDismiss }) => {
     return mutate(data, {
       onSuccess: () => {
         refetch()
-        notification("Success", "Successfully created exchange", "success")
+        notification("Sukces", "Pomyślnie stworzono wymianę", "success")
         onDismiss()
       },
       onError: (err) => {
-        notification("Error", getErrorMessage(err), "error")
+        notification("Błąd", getErrorMessage(err), "error")
       },
     })
   }
@@ -238,9 +238,9 @@ const SwapMenu: React.FC<SwapMenuProps> = ({ order, onDismiss }) => {
               </div>
             ) : (
               <Select
-                label="Shipping Method"
+                label="Metoda dostawy"
                 className="mt-2"
-                placeholder="Add a shipping method"
+                placeholder="Wybierz metodę dostawy"
                 value={shippingMethod}
                 onChange={handleShippingSelected}
                 options={
@@ -278,7 +278,7 @@ const SwapMenu: React.FC<SwapMenuProps> = ({ order, onDismiss }) => {
                   )
                 }}
               >
-                Add Product
+                Dodaj produkt
               </Button>
             ) : (
               <></>
@@ -387,7 +387,7 @@ const SwapMenu: React.FC<SwapMenuProps> = ({ order, onDismiss }) => {
               type="submit"
               variant="primary"
             >
-              Complete
+              Zakończ
             </Button>
           </div>
         </Modal.Footer>
@@ -398,7 +398,7 @@ const SwapMenu: React.FC<SwapMenuProps> = ({ order, onDismiss }) => {
 
 const SelectProductsScreen = (pop, itemsToAdd, setSelectedItems) => {
   return {
-    title: "Add Products",
+    title: "Dodaj produkty",
     onBack: () => pop(),
     view: (
       <RMASelectProductSubModal

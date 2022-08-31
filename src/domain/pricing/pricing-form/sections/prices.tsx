@@ -32,8 +32,8 @@ const PricesSection = ({ isEdit = false, id }: PricesSectionProps) => {
       forceMountContent
       required
       value="prices"
-      title="Prices"
-      description="You will be able to override the prices for the products you add here"
+      title="Ceny"
+      description="Możesz nadpisać ceny produktów dodanych tutaj"
       tooltip="Define the price overrides for the price list"
     >
       <ProductPrices

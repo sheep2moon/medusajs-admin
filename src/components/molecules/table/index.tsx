@@ -256,7 +256,7 @@ Table.Row = React.forwardRef<HTMLTableRowElement, TableRowProps>(
 
 export const TablePagination = ({
   className,
-  title = "Elements",
+  title = "Elementy",
   currentPage,
   pageCount,
   pageSize,

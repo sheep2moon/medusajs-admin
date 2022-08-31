@@ -58,20 +58,17 @@ const MailDialog = ({ onDismiss }) => {
       className="bg-grey-0 w-[400px] shadow-dropdown rounded-rounded p-8 top-[64px] bottom-2 right-3 rounded overflow-x-hidden fixed flex flex-col justify-between"
     >
       <div>
-        <h1 className="inter-xlarge-semibold mb-1">How can we help?</h1>
-        <h2 className="inter-small-regular text-grey-50 mb-6">
-          We usually respond in a few hours
-        </h2>
+        <h1 className="inter-xlarge-semibold mb-1">Jak możemy pomóc?</h1>
         <InputField
-          label={"Subject"}
+          label={"Temat"}
           value={subject}
           className="mb-4"
-          placeholder="What is it about?..."
+          placeholder="O co chodzi?..."
           onChange={(e) => setSubject(e.target.value)}
         />
         <Textarea
-          label={"How can we help?"}
-          placeholder="Write a message..."
+          label={"Jak możemy pomóc?"}
+          placeholder="Napisz wiadomość..."
           value={body}
           onSelect={(e) =>
             setBodySelectionStart(e?.target?.selectionStart || 0)
@@ -94,15 +91,9 @@ const MailDialog = ({ onDismiss }) => {
             <DiscordIcon size={24} />
           </a>
         </span>
-        <span className="inter-small-regular w-full text-center text-grey-40">
-          Feel free to join a community of
-        </span>
-        <span className="inter-small-regular w-full text-center text-grey-40 mb-7">
-          merchants and e-commerce developers
-        </span>
         <a className="w-full" href={link}>
           <Button variant="primary" size="large" className="w-full">
-            Send a message
+            Wyślij wiadomość
           </Button>
         </a>
       </div>

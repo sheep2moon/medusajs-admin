@@ -24,15 +24,15 @@ type RefundStatusProps = {
 const PaymentStatus: React.FC<PaymentStatusProps> = ({ paymentStatus }) => {
   switch (paymentStatus) {
     case "captured":
-      return <StatusIndicator title="Paid" variant="success" />
+      return <StatusIndicator title="Zapłacone" variant="success" />
     case "awaiting":
-      return <StatusIndicator title="Awaiting" variant="default" />
+      return <StatusIndicator title="Oczekuje" variant="default" />
     case "not_paid":
-      return <StatusIndicator title="Not paid" variant="default" />
+      return <StatusIndicator title="Nie zapłacone" variant="default" />
     case "canceled":
-      return <StatusIndicator title="Canceled" variant="danger" />
+      return <StatusIndicator title="Anulowane" variant="danger" />
     case "requires_action":
-      return <StatusIndicator title="Requires Action" variant="danger" />
+      return <StatusIndicator title="Konieczność działania" variant="danger" />
     default:
       return null
   }
@@ -41,13 +41,13 @@ const PaymentStatus: React.FC<PaymentStatusProps> = ({ paymentStatus }) => {
 const OrderStatus: React.FC<OrderStatusProps> = ({ orderStatus }) => {
   switch (orderStatus) {
     case "completed":
-      return <StatusIndicator title="Completed" variant="success" />
+      return <StatusIndicator title="Zakończone" variant="success" />
     case "pending":
-      return <StatusIndicator title="Processing" variant="default" />
+      return <StatusIndicator title="Przetwarzane" variant="default" />
     case "canceled":
-      return <StatusIndicator title="Canceled" variant="danger" />
+      return <StatusIndicator title="Anulowane" variant="danger" />
     case "requires_action":
-      return <StatusIndicator title="Rejected" variant="danger" />
+      return <StatusIndicator title="Odrzucone" variant="danger" />
     default:
       return null
   }
@@ -58,17 +58,19 @@ const FulfillmentStatus: React.FC<FulfillmentStatusProps> = ({
 }) => {
   switch (fulfillmentStatus) {
     case "shipped":
-      return <StatusIndicator title="Shipped" variant="success" />
+      return <StatusIndicator title="Dostarczone" variant="success" />
     case "fulfilled":
-      return <StatusIndicator title="Fulfilled" variant="warning" />
+      return <StatusIndicator title="Zrealizowane" variant="warning" />
     case "canceled":
-      return <StatusIndicator title="Canceled" variant="danger" />
+      return <StatusIndicator title="Anulowane" variant="danger" />
     case "partially_fulfilled":
-      return <StatusIndicator title="Partially fulfilled" variant="warning" />
+      return (
+        <StatusIndicator title="Częściowo zrealizowane" variant="warning" />
+      )
     case "not_fulfilled":
-      return <StatusIndicator title="Not fulfilled" variant="default" />
+      return <StatusIndicator title="Nie zrealizowane" variant="default" />
     case "requires_action":
-      return <StatusIndicator title="Requires Action" variant="danger" />
+      return <StatusIndicator title="Konieczność działania" variant="danger" />
     default:
       return null
   }
@@ -77,13 +79,13 @@ const FulfillmentStatus: React.FC<FulfillmentStatusProps> = ({
 const ReturnStatus: React.FC<ReturnStatusProps> = ({ returnStatus }) => {
   switch (returnStatus) {
     case "received":
-      return <StatusIndicator title="Received" variant="success" />
+      return <StatusIndicator title="Otrzymano" variant="success" />
     case "requested":
-      return <StatusIndicator title="Requested" variant="default" />
+      return <StatusIndicator title="Wysłano żądanie" variant="default" />
     case "canceled":
-      return <StatusIndicator title="Canceled" variant="danger" />
+      return <StatusIndicator title="Anulowano" variant="danger" />
     case "requires_action":
-      return <StatusIndicator title="Requires Action" variant="danger" />
+      return <StatusIndicator title="Konieczność działania" variant="danger" />
     default:
       return null
   }
@@ -92,11 +94,11 @@ const ReturnStatus: React.FC<ReturnStatusProps> = ({ returnStatus }) => {
 const RefundStatus: React.FC<RefundStatusProps> = ({ refundStatus }) => {
   switch (refundStatus) {
     case "na":
-      return <StatusIndicator title="N/A" variant="default" />
+      return <StatusIndicator title="Brak danych" variant="default" />
     case "not_refunded":
-      return <StatusIndicator title="Refunded" variant="default" />
+      return <StatusIndicator title="Nie zwrócono" variant="default" />
     case "refunded":
-      return <StatusIndicator title="Refunded" variant="success" />
+      return <StatusIndicator title="Zwrócono" variant="success" />
     default:
       return null
   }

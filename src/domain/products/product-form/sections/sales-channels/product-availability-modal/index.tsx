@@ -33,7 +33,7 @@ const ProductAvailabilityModal: React.FC<ProductAvailabilityModalProps> = ({
     <LayeredModal context={context} handleClose={onClose}>
       <Modal.Body>
         <Modal.Header handleClose={onClose}>
-          <h2 className="inter-xlarge-semibold">Change Availability</h2>
+          <h2 className="inter-xlarge-semibold">Zmień dostępność</h2>
         </Modal.Header>
         <Modal.Content>
           <AvailableChannelsModalScreen
@@ -50,7 +50,7 @@ const ProductAvailabilityModal: React.FC<ProductAvailabilityModalProps> = ({
                 size="small"
                 variant="ghost"
               >
-                Cancel
+                Anuluj
               </Button>
               <Button
                 onClick={onSave}
@@ -58,7 +58,7 @@ const ProductAvailabilityModal: React.FC<ProductAvailabilityModalProps> = ({
                 size="small"
                 variant="primary"
               >
-                Save
+                Zapisz
               </Button>
             </div>
           </div>

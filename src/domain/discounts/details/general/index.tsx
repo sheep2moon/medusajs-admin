@@ -110,7 +110,7 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
           <div className="border-l border-grey-20 pl-6">
             {getPromotionDescription(discount)}
             <span className="inter-small-regular text-grey-50">
-              Discount Amount
+              Wartość zniżki
             </span>
           </div>
           <div className="border-l border-grey-20 pl-6 ml-12">
@@ -118,7 +118,7 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
               {discount.regions.length.toLocaleString("en-US")}
             </h2>
             <span className="inter-small-regular text-grey-50">
-              Valid Regions
+              Prawidłowe regiony
             </span>
           </div>
           <div className="border-l border-grey-20 pl-6 ml-12">
@@ -126,7 +126,7 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
               {discount.usage_count.toLocaleString("en-US")}
             </h2>
             <span className="inter-small-regular text-grey-50">
-              Total Redemptions
+              Łączna opłata
             </span>
           </div>
         </div>
@@ -165,10 +165,10 @@ const getPromotionDescription = (discount: Discount) => {
       )
     case "free_shipping":
       return (
-        <h2 className="inter-xlarge-regular text-grey-90">{`FREE SHIPPING`}</h2>
+        <h2 className="inter-xlarge-regular text-grey-90">{`Darmowa dostawa`}</h2>
       )
     default:
-      return "Unknown discount type"
+      return "Nieznany typ zniżki"
   }
 }
 

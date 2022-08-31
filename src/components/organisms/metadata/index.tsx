@@ -18,7 +18,7 @@ export type MetadataField = {
 const Metadata: React.FC<AddMetadataProps> = ({
   metadata,
   setMetadata,
-  heading = "Metadata",
+  heading = "Metadane",
 }) => {
   const [localData, setLocalData] = useState<MetadataField[]>([])
 
@@ -79,7 +79,7 @@ const Metadata: React.FC<AddMetadataProps> = ({
             onClick={addKeyPair}
           >
             <PlusIcon size={20} />
-            Add Metadata
+            Dodaj metadane
           </Button>
         </div>
       </div>
@@ -98,8 +98,8 @@ const Field: React.FC<FieldProps> = ({ field, updateKey, updateValue }) => {
     <div className="flex items-center w-full gap-x-xsmall">
       <div className="maw-w-[200px]">
         <InputField
-          label="Key"
-          placeholder="Some key"
+          label="Klucz"
+          placeholder="Klucz"
           defaultValue={field.key}
           onChange={(e) => {
             updateKey(e.currentTarget.value)
@@ -108,8 +108,8 @@ const Field: React.FC<FieldProps> = ({ field, updateKey, updateValue }) => {
       </div>
       <div className="flex-grow">
         <InputField
-          label="Value"
-          placeholder="Some value"
+          label="Wartość"
+          placeholder="wartość"
           defaultValue={field.value}
           onChange={(e) => {
             updateValue(e.currentTarget.value)

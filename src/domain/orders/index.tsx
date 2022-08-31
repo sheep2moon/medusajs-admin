@@ -35,7 +35,7 @@ const OrderIndex: React.FC<RouteComponentProps> = () => {
         onClick={() => openExportModal()}
       >
         <ExportIcon size={20} />
-        Export Orders
+        Eksportuj zamówienia
       </Button>,
     ]
   }, [view])
@@ -49,10 +49,10 @@ const OrderIndex: React.FC<RouteComponentProps> = () => {
 
     createBatchJob.mutate(reqObj, {
       onSuccess: () => {
-        notification("Success", "Successfully initiated export", "success")
+        notification("Sukces", "Pomyślnie rozpoczęto eksport", "success")
       },
       onError: (err) => {
-        notification("Error", getErrorMessage(err), "error")
+        notification("Błąd", getErrorMessage(err), "error")
       },
     })
 
@@ -83,7 +83,7 @@ const OrderIndex: React.FC<RouteComponentProps> = () => {
       </div>
       {exportModalOpen && (
         <ExportModal
-          title="Export Orders"
+          title="Eksportuj zamówienia"
           handleClose={() => closeExportModal()}
           onSubmit={handleCreateExport}
           loading={createBatchJob.isLoading}

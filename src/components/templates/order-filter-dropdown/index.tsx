@@ -162,21 +162,21 @@ const OrderFilters = ({
           setFilter={(val) => setSingleFilter("status", val)}
         />
         <FilterDropdownItem
-          filterTitle="Payment Status"
+          filterTitle="Status płatności"
           options={paymentFilters}
           filters={tempState.payment.filter}
           open={tempState.payment.open}
           setFilter={(val) => setSingleFilter("payment", val)}
         />
         <FilterDropdownItem
-          filterTitle="Fulfillment Status"
+          filterTitle="Status realizacji"
           options={fulfillmentFilters}
           filters={tempState.fulfillment.filter}
           open={tempState.fulfillment.open}
           setFilter={(val) => setSingleFilter("fulfillment", val)}
         />
         <FilterDropdownItem
-          filterTitle="Regions"
+          filterTitle="Regiony"
           options={
             regions?.map((region) => ({
               value: region.id,
@@ -195,7 +195,7 @@ const OrderFilters = ({
           setFilter={(v) => setSingleFilter("region", v)}
         />
         <FilterDropdownItem
-          filterTitle="Date"
+          filterTitle="Data"
           options={dateFilters}
           filters={tempState.date.filter}
           open={tempState.date.open}

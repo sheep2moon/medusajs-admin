@@ -63,10 +63,10 @@ const Return: React.FC<ReturnRequestedProps> = ({ event, refetch }) => {
         <DeletePrompt
           handleClose={() => setShowCancel(false)}
           onDelete={async () => handleCancel()}
-          heading="Cancel return"
-          confirmText="Yes, cancel"
-          successText="Canceled return"
-          text="Are you sure you want to cancel this return?"
+          heading="Anuluj zwrot"
+          confirmText="Tak, anuluj"
+          successText="Anulowano zwrot"
+          text="Napewno chcesz anulować ten zwrot?"
         />
       )}
       {showReceive && order && (
@@ -87,14 +87,14 @@ function buildReturn(
   onCancel: () => void,
   onReceive: () => void
 ) {
-  let title: string = "Return"
+  let title: string = "Zwrot"
   let icon: React.ReactNode
   let button: React.ReactNode
   const actions: ActionType[] = []
 
   switch (event.status) {
     case "requested":
-      title = "Return Requested"
+      title = "Żądanie zwrotu"
       icon = <AlertIcon size={20} className="text-orange-40" />
       if (event.currentStatus === "requested") {
         button = event.currentStatus && event.currentStatus === "requested" && (
@@ -104,27 +104,27 @@ function buildReturn(
             className={clsx("mt-large")}
             onClick={onReceive}
           >
-            Receive Return
+            Otrzymaj Zwrot
           </Button>
         )
         actions.push({
           icon: <TrashIcon size={20} />,
-          label: "Cancel return",
+          label: "Anuluj zwrot",
           variant: "danger",
           onClick: onCancel,
         })
       }
       break
     case "received":
-      title = "Return Received"
+      title = "Otrzymano zwrot"
       icon = <CheckCircleIcon size={20} className="text-emerald-40" />
       break
     case "canceled":
-      title = "Return Canceled"
+      title = "Zwrot anulowany"
       icon = <CancelIcon size={20} className="text-grey-50" />
       break
     case "requires_action":
-      title = "Return Requires Action"
+      title = "Zwrot wymaga działania"
       icon = <AlertIcon size={20} className="text-rose-50" />
       break
     default:

@@ -169,10 +169,10 @@ const RMASelectProductTable: React.FC<RMASelectProductTableProps> = ({
                           <span>{item.variant.title}</span>
                         )}
                         {item?.variant?.sku && (
-                            <CopyToClipboard
-                              value={item.variant.sku}
-                              iconSize={14}
-                            />
+                          <CopyToClipboard
+                            value={item.variant.sku}
+                            iconSize={14}
+                          />
                         )}
                       </div>
                     </div>
@@ -261,7 +261,7 @@ const RMASelectProductTable: React.FC<RMASelectProductTableProps> = ({
                         size="small"
                         className="border border-grey-20"
                       >
-                        Select Reason
+                        Wybierz powód
                       </Button>
                     </div>
                   </Table.Cell>

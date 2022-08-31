@@ -318,7 +318,7 @@ const OrderDetails = ({ id }) => {
               forceDropdown={true}
               actionables={[
                 {
-                  label: "Cancel Order",
+                  label: "Anuluj zamówienie",
                   icon: <CancelIcon size={"20"} />,
                   variant: "danger",
                   onClick: () => handleDeleteOrder(),
@@ -340,13 +340,13 @@ const OrderDetails = ({ id }) => {
                 </div>
                 <div className="flex flex-col pl-6">
                   <div className="inter-smaller-regular text-grey-50 mb-1">
-                    Phone
+                    Telefon
                   </div>
                   <div>{order?.shipping_address?.phone || "N/A"}</div>
                 </div>
                 <div className="flex flex-col pl-6">
                   <div className="inter-smaller-regular text-grey-50 mb-1">
-                    Payment
+                    Płatność
                   </div>
                   <div>
                     {order?.payments
@@ -357,7 +357,7 @@ const OrderDetails = ({ id }) => {
                 <FeatureToggle featureFlag="sales_channels">
                   <div className="flex flex-col pl-6">
                     <div className="inter-smaller-regular text-grey-50 mb-1 whitespace-nowrap">
-                      Sales Channel
+                      Kanały sprzedaży
                     </div>
                     <div>{order?.sales_channel?.name || "N/A"}</div>
                   </div>

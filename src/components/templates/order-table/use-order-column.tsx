@@ -13,13 +13,13 @@ const useOrderTableColums = () => {
   const decideStatus = (status) => {
     switch (status) {
       case "captured":
-        return <StatusDot variant="success" title={"Paid"} />
+        return <StatusDot variant="success" title={"Zapłacone"} />
       case "awaiting":
-        return <StatusDot variant="default" title={"Awaiting"} />
+        return <StatusDot variant="default" title={"Oczekuję"} />
       case "requires_action":
-        return <StatusDot variant="danger" title={"Requires action"} />
+        return <StatusDot variant="danger" title={"Konieczność działania"} />
       case "canceled":
-        return <StatusDot variant="warning" title={"Canceled"} />
+        return <StatusDot variant="warning" title={"Anulowane"} />
       default:
         return <StatusDot variant="primary" title={"N/A"} />
     }
@@ -28,7 +28,7 @@ const useOrderTableColums = () => {
   const columns = useMemo(
     () => [
       {
-        Header: <Table.HeadCell className="pl-2">Order</Table.HeadCell>,
+        Header: <Table.HeadCell className="pl-2">Zamówienie</Table.HeadCell>,
         accessor: "display_id",
         Cell: ({ cell: { value }, index }) => (
           <Table.Cell
@@ -38,7 +38,7 @@ const useOrderTableColums = () => {
         ),
       },
       {
-        Header: "Date added",
+        Header: "Data dodania",
         accessor: "created_at",
         Cell: ({ cell: { value }, index }) => (
           <Table.Cell key={index}>
@@ -49,7 +49,7 @@ const useOrderTableColums = () => {
         ),
       },
       {
-        Header: "Customer",
+        Header: "Klient",
         accessor: "shipping_address",
         Cell: ({ row, cell: { value }, index }) => (
           <Table.Cell key={index}>
@@ -64,28 +64,28 @@ const useOrderTableColums = () => {
         ),
       },
       {
-        Header: "Fulfillment",
+        Header: "Realizacja",
         accessor: "fulfillment_status",
         Cell: ({ cell: { value }, index }) => (
           <Table.Cell key={index}>{value}</Table.Cell>
         ),
       },
       {
-        Header: "Payment status",
+        Header: "Status płatności",
         accessor: "payment_status",
         Cell: ({ cell: { value }, index }) => (
           <Table.Cell key={index}>{decideStatus(value)}</Table.Cell>
         ),
       },
       {
-        Header: "Sales Channel",
+        Header: "Kanał sprzedaży",
         accessor: "sales_channel",
         Cell: ({ cell: { value }, index }) => (
           <Table.Cell key={index}>{value?.name ?? "N/A"}</Table.Cell>
         ),
       },
       {
-        Header: () => <div className="text-right">Total</div>,
+        Header: () => <div className="text-right">Łącznie</div>,
         accessor: "total",
         Cell: ({ row, cell: { value }, index }) => (
           <Table.Cell key={index}>

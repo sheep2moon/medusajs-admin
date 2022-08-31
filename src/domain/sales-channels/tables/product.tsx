@@ -200,7 +200,7 @@ export const ProductTable = forwardRef(
         icon: <DetailsIcon size={20} />,
       },
       {
-        label: "Remove from the channel",
+        label: "Usuń z kanału",
         variant: "danger",
         onClick: () => removeProductFromSalesChannel(id),
         icon: <TrashIcon size={20} />,
@@ -266,7 +266,7 @@ export const ProductTable = forwardRef(
           limit={limit}
           offset={offs}
           pageSize={offs + rows.length}
-          title="Products"
+          title="Produkty"
           currentPage={pageIndex + 1}
           pageCount={pageCount}
           nextPage={handleNext}
@@ -332,10 +332,10 @@ function RemoveProductsPopup({
       )}
     >
       <div className="h-[48px] min-w-[224px] rounded-lg border shadow-toaster flex items-center justify-around gap-3 px-4 py-3 pointer-events-auto">
-        <span className="text-small text-grey-50">{total} selected</span>
+        <span className="text-small text-grey-50">{total} wybrane</span>
         <div className="w-[1px] h-[20px] bg-grey-20" />
         <Button variant="danger" size="small" onClick={onRemove}>
-          Remove
+          Usuń
         </Button>
         <button onClick={onClose} className="text-grey-50 cursor-pointer">
           <CrossIcon size={20} />
@@ -389,7 +389,7 @@ function SalesChannelProductsTable(props: SalesChannelProductsTableProps) {
   const removeProductFromSalesChannel = (id: string) => {
     deleteProductsFromSalesChannel({ product_ids: [{ id }] })
 
-    notification("Success", "Product successfully removed", "success")
+    notification("Sukces", "Produkt usunięty pomyślnie", "success")
   }
 
   const removeSelectedProducts = async () => {
@@ -397,11 +397,7 @@ function SalesChannelProductsTable(props: SalesChannelProductsTableProps) {
       product_ids: selectedRowIds.map((id) => ({ id })),
     })
 
-    notification(
-      "Success",
-      "Products successfully removed from the sales channel",
-      "success"
-    )
+    notification("Sukces", "Produkt pomyślnie usunięty z kanału", "success")
     resetSelection()
   }
 
@@ -469,8 +465,8 @@ function SalesChannelProductsSelectModal(
     addProductsBatch({ product_ids: selectedRowIds.map((i) => ({ id: i })) })
     handleClose()
     notification(
-      "Success",
-      "Products successfully added to the sales channel",
+      "Sukces",
+      "Produkt pomyślnie dodany do kanału sprzedaży",
       "success"
     )
   }
@@ -479,7 +475,7 @@ function SalesChannelProductsSelectModal(
     <Modal handleClose={handleClose}>
       <Modal.Body>
         <Modal.Header handleClose={handleClose}>
-          <span className="inter-xlarge-semibold">Add products</span>
+          <span className="inter-xlarge-semibold">Dodaj produkty</span>
         </Modal.Header>
         <Modal.Content>
           <ProductTable
@@ -500,7 +496,7 @@ function SalesChannelProductsSelectModal(
               onClick={handleClose}
               className="mr-2"
             >
-              Close
+              Zamknij
             </Button>
             <Button
               variant="primary"
@@ -508,7 +504,7 @@ function SalesChannelProductsSelectModal(
               size="small"
               onClick={handleSubmit}
             >
-              Save
+              Zapisz
             </Button>
           </div>
         </Modal.Footer>

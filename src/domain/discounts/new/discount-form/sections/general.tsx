@@ -64,7 +64,7 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
             name="regions"
             control={control}
             rules={{
-              required: "Atleast one region is required",
+              required: "Przynajmniej jeden region wymagany",
               validate: (value) =>
                 Array.isArray(value) ? value.length > 0 : !!value,
             }}
@@ -75,7 +75,7 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
                   onChange={(value) => {
                     onChange(type === "fixed" ? [value] : value)
                   }}
-                  label="Choose valid regions"
+                  label="Wybierz prawidłowe regiony"
                   isMultiSelect={type !== "fixed"}
                   hasSelectAll={type !== "fixed"}
                   enableSearch
@@ -87,12 +87,12 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
           />
           <div className="flex gap-x-base gap-y-base my-base">
             <InputField
-              label="Code"
+              label="Kod"
               className="flex-1"
-              placeholder="SUMMERSALE10"
+              placeholder="FISHING10"
               required
               name="code"
-              ref={register({ required: "Code is required" })}
+              ref={register({ required: "Kod jest wymagany" })}
             />
 
             {type !== "free_shipping" && (
@@ -109,13 +109,13 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
                         name="rule.value"
                         control={control}
                         rules={{
-                          required: "Amount is required",
+                          required: "Wartość jest wymagana",
                           min: 1,
                         }}
                         render={({ value, onChange }) => {
                           return (
                             <CurrencyInput.AmountInput
-                              label={"Amount"}
+                              label={"Wartość"}
                               required
                               amount={value}
                               onChange={onChange}
@@ -128,7 +128,7 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
                 ) : (
                   <div className="flex-1">
                     <InputField
-                      label="Percentage"
+                      label="Procent"
                       min={0}
                       required
                       type="number"
@@ -147,16 +147,13 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
           </div>
 
           <div className="text-grey-50 inter-small-regular flex flex-col mb-6">
-            <span>
-              The code your customers will enter during checkout. This will
-              appear on your customer’s invoice.
-            </span>
-            <span>Uppercase letters and numbers only.</span>
+            <span>Kod który klient wpisze podczas składania zamówienia.</span>
+            <span>Tylko wielkie litery oraz cyfry dozwolone.</span>
           </div>
           <Textarea
-            label="Description"
+            label="Opis"
             required
-            placeholder="Summer Sale 2022"
+            placeholder="Wyprzedaż 2023"
             rows={1}
             name="rule.description"
             ref={register({
@@ -170,7 +167,7 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
               render={({ onChange, value }) => {
                 return (
                   <Checkbox
-                    label="This is a template discount"
+                    label="To szablon zniżki"
                     name="is_dynamic"
                     id="is_dynamic"
                     checked={value}

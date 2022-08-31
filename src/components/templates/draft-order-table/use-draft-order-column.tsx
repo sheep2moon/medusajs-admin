@@ -9,23 +9,23 @@ const useDraftOrderTableColumns = () => {
   const decideStatus = (status) => {
     switch (status) {
       case "completed":
-        return <StatusDot variant="success" title={"Completed"} />
+        return <StatusDot variant="success" title={"Zakończone"} />
       default:
-        return <StatusDot variant="primary" title={"Open"} />
+        return <StatusDot variant="primary" title={"Otwarte"} />
     }
   }
 
   const columns = useMemo(
     () => [
       {
-        Header: "Draft",
+        Header: "Plan",
         accessor: "display_id",
         Cell: ({ cell: { value }, index }) => (
           <Table.Cell key={index} className="pl-2">{`#${value}`}</Table.Cell>
         ),
       },
       {
-        Header: "Order",
+        Header: "Zamówienie",
         accessor: "order_display_id",
         Cell: ({ row }, index) => (
           <Table.Cell key={index}>
@@ -36,7 +36,7 @@ const useDraftOrderTableColumns = () => {
         ),
       },
       {
-        Header: "Date added",
+        Header: "Data dodania",
         accessor: "created_at",
         Cell: ({ cell: { value }, index }) => (
           <Table.Cell key={index}>
@@ -45,7 +45,7 @@ const useDraftOrderTableColumns = () => {
         ),
       },
       {
-        Header: "Customer",
+        Header: "Klient",
         accessor: "shipping_address",
         Cell: ({ row, cell: { value }, index }) => (
           <Table.Cell key={index}>

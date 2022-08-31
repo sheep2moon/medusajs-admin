@@ -49,7 +49,7 @@ const OrderResults = ({
                     }
                   )}
                 >
-                  Jump to...
+                  Skocz do...
                 </span>
               </Link>
             </li>

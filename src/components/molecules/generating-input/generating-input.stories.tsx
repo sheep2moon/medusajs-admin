@@ -13,15 +13,15 @@ const Template: ComponentStory<typeof GeneratingInput> = (args) => (
 
 export const Default = Template.bind({})
 Default.args = {
-  label: "Code",
+  label: "Kod",
   required: true,
-  placeholder: "MEDUSA15",
+  placeholder: "FISHING15",
 }
 
 export const HasValue = Template.bind({})
 HasValue.args = {
   label: "Code",
   required: true,
-  placeholder: "MEDUSA15",
-  value: "SUMMER2014",
+  placeholder: "FISHING15",
+  value: "LATO2k22",
 }

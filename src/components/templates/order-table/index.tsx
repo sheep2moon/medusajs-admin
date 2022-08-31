@@ -208,7 +208,7 @@ const OrderTable: React.FC<RouteComponentProps> = () => {
         limit={queryObject.limit}
         offset={queryObject.offset}
         pageSize={queryObject.offset + rows.length}
-        title="Orders"
+        title="Zamówienia"
         currentPage={pageIndex + 1}
         pageCount={pageCount}
         nextPage={handleNext}

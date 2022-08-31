@@ -56,32 +56,32 @@ const CollectionModal: React.FC<CollectionModalProps> = ({
         <Modal.Header handleClose={onClose}>
           <div>
             <h1 className="inter-xlarge-semibold mb-2xsmall">
-              {isEdit ? "Edit Collection" : "Add Collection"}
+              {isEdit ? "Edytuj kolekcje" : "Add Collection"}
             </h1>
             <p className="inter-small-regular text-grey-50">
-              To create a collection, all you need is a title and a handle.
+              Do stworzenia potrzebujesz nazwy i handle.
             </p>
           </div>
         </Modal.Header>
         <form onSubmit={handleSubmit(submit)}>
           <Modal.Content isLargeModal>
             <div>
-              <h2 className="inter-base-semibold mb-base">Details</h2>
+              <h2 className="inter-base-semibold mb-base">Szczegóły</h2>
               <div className="flex items-center gap-x-base">
                 <InputField
-                  label="Title"
+                  label="Nazwa"
                   required
-                  placeholder="Sunglasses"
+                  placeholder="Przynęty"
                   name="title"
                   ref={register({ required: true })}
                 />
                 <InputField
                   label="Handle"
-                  placeholder="sunglasses"
+                  placeholder="przynety"
                   name="handle"
                   prefix="/"
                   tooltip={
-                    <IconTooltip content="URL Slug for the product. Will be auto generated if left blank." />
+                    <IconTooltip content="Używany w linku jako odnośnik." />
                   }
                   ref={register}
                 />
@@ -99,10 +99,10 @@ const CollectionModal: React.FC<CollectionModalProps> = ({
                 type="button"
                 onClick={onClose}
               >
-                Cancel
+                Anuluj
               </Button>
               <Button variant="primary" size="small">
-                {`${isEdit ? "Save" : "Publish"} collection`}
+                {`${isEdit ? "Zapisz" : "Aktualizuj"} kolekcje`}
               </Button>
             </div>
           </Modal.Footer>

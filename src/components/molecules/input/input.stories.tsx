@@ -26,8 +26,8 @@ Required.args = {
 
 export const WithInfoTooltip = Template.bind({})
 WithInfoTooltip.args = {
-  label: "Default",
-  tooltipContent: "This is a tooltip",
+  label: "Domyślny",
+  tooltipContent: "tooltip",
 }
 
 export const WithCustomTooltip = Template.bind({})

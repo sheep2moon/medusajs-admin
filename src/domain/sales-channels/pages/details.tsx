@@ -174,7 +174,7 @@ function SalesChannelsHeader(props: SalesChannelsHeaderProps) {
             ref={inputRef}
             value={filterText}
             onChange={(e) => setFilterText(e.target.value)}
-            placeholder="Search by title or description"
+            placeholder="Szukaj po nazwie lub opisie"
             className="bg-inherit outline-none outline-0 w-full remove-number-spinner leading-base text-grey-90 font-normal caret-violet-60 placeholder-grey-40"
             onBlur={() => setShowFilter(!!filterText)}
             autoComplete="off"
@@ -254,17 +254,17 @@ function SalesChannelDetailsHeader(props: SalesChannelDetailsHeaderProps) {
 
   const actions = [
     {
-      label: "Edit general info",
+      label: "Edytuj podstawowe informacje",
       icon: <EditIcon size="20" />,
       onClick: openUpdateModal,
     },
     {
-      label: "Add products",
+      label: "Dodaj produkty",
       icon: <PlusIcon />,
       onClick: () => showProductsAdd(),
     },
     {
-      label: "Delete channel",
+      label: "Usuń kanał",
       icon: <TrashIcon size={20} />,
       variant: "danger",
       onClick: () => setShowDelete(true),
@@ -295,10 +295,10 @@ function SalesChannelDetailsHeader(props: SalesChannelDetailsHeaderProps) {
             deleteSalesChannel()
             resetDetails()
           }}
-          confirmText="Yes, delete"
-          successText="Sales channel deleted"
-          text={`Are you sure you want to delete "${salesChannel.name}" sales channel?`}
-          heading="Delete channel"
+          confirmText="Tak, usuń"
+          successText="Usunięto kanał sprzedaży"
+          text={`Napewno usunąć "${salesChannel.name}"?`}
+          heading="Usuń kanał"
         />
       )}
     </div>
@@ -437,8 +437,8 @@ function Details(props: DetailsProps) {
   return (
     <div>
       <Breadcrumb
-        currentPage={"Sales channels"}
-        previousBreadcrumb={"Settings"}
+        currentPage={"Kanały sprzedaży"}
+        previousBreadcrumb={"Ustawienia"}
         previousRoute="/a/settings"
       />
 

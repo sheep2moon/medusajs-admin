@@ -36,7 +36,7 @@ const EditUserModal: React.FC<EditUserModalProps> = ({
         last_name,
       })
       .then((res) => onSubmit())
-      .catch((err) => notification("Error", getErrorMessage(err), "error"))
+      .catch((err) => notification("Błąd", getErrorMessage(err), "error"))
 
     handleClose()
   }
@@ -45,20 +45,20 @@ const EditUserModal: React.FC<EditUserModalProps> = ({
     <Modal handleClose={handleClose}>
       <Modal.Body>
         <Modal.Header handleClose={handleClose}>
-          <span className="inter-xlarge-semibold">Edit User</span>
+          <span className="inter-xlarge-semibold">Edytuj użytkownika</span>
         </Modal.Header>
         <Modal.Content>
           <div className="w-full flex mb-4">
             <InputField
-              label="First Name"
-              placeholder="First name..."
+              label="Imię"
+              placeholder="Imię..."
               onChange={(e) => setFirstName(e.target.value)}
               value={first_name}
               className="mr-4"
             />
             <InputField
-              label="Last Name"
-              placeholder="Last name..."
+              label="Nazwisko"
+              placeholder="Nazwisko..."
               onChange={(e) => setLastName(e.target.value)}
               value={last_name}
             />
@@ -73,7 +73,7 @@ const EditUserModal: React.FC<EditUserModalProps> = ({
               onClick={handleClose}
               className="mr-2"
             >
-              Cancel
+              Anuluj
             </Button>
             <Button
               loading={isLoading}
@@ -81,7 +81,7 @@ const EditUserModal: React.FC<EditUserModalProps> = ({
               size="small"
               onClick={submit}
             >
-              Save
+              Zapisz
             </Button>
           </div>
         </Modal.Footer>

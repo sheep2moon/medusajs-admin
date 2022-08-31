@@ -153,7 +153,7 @@ const DiscountTable: React.FC = () => {
         }
         enableSearch
         handleSearch={setQuery}
-        searchPlaceholder="Search by code or description..."
+        searchPlaceholder="Szukaj po kodzie lub opisie..."
         searchValue={query}
         {...getTableProps()}
         className={clsx({ ["relative"]: isLoading })}

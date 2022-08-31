@@ -220,7 +220,7 @@ const NewOrder = ({ onDismiss, refresh }) => {
       navigate(`/a/draft-orders/${data.draft_order.id}`)
       onDismiss()
     } catch (error) {
-      notification("Error", "Something went wrong. Please try again", "error")
+      notification("Błąd", "Coś poszło nie tak, spróbuj ponownie", "error")
     }
 
     setCreatingOrder(false)
@@ -308,7 +308,7 @@ const NewOrder = ({ onDismiss, refresh }) => {
         />,
       ]}
       lastScreenIsSummary={true}
-      title={"Create Draft Order"}
+      title={"Stwórz plan zamówienia"}
       handleClose={onDismiss}
     />
   )

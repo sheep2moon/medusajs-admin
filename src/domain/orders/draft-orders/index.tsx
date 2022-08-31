@@ -18,7 +18,7 @@ const DraftOrderIndex: React.FC<RouteComponentProps> = () => {
   const actions = useMemo(() => {
     return [
       {
-        label: "Create draft order",
+        label: "Stwórz plan zamówienia",
         onClick: () => setShowNewOrder(true),
         icon: <PlusIcon size={20} />,
       },

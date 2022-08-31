@@ -46,12 +46,12 @@ const EditGeneral: React.FC<EditGeneralProps> = ({ discount, onClose }) => {
       },
       {
         onSuccess: ({ discount }) => {
-          notification("Success", "Discount updated successfully", "success")
+          notification("Sukces", "Zniżka zaktualizowana pomyślnie", "success")
           reset(mapGeneral(discount))
           onClose()
         },
         onError: (error) => {
-          notification("Error", getErrorMessage(error), "error")
+          notification("Błąd", getErrorMessage(error), "error")
         },
       }
     )
@@ -91,14 +91,16 @@ const EditGeneral: React.FC<EditGeneralProps> = ({ discount, onClose }) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Modal.Body>
           <Modal.Header handleClose={onClose}>
-            <h1 className="inter-xlarge-semibold">Edit general information</h1>
+            <h1 className="inter-xlarge-semibold">
+              Edytuj podstawowe informacje
+            </h1>
           </Modal.Header>
           <Modal.Content isLargeModal>
             <Controller
               name="regions"
               control={control}
               rules={{
-                required: "Atleast one region is required",
+                required: "Wybierz przynajmniej jeden region",
                 validate: (value) =>
                   Array.isArray(value) ? value.length > 0 : !!value,
               }}
@@ -109,7 +111,7 @@ const EditGeneral: React.FC<EditGeneralProps> = ({ discount, onClose }) => {
                     onChange={(value) => {
                       onChange(type === "fixed" ? [value] : value)
                     }}
-                    label="Choose valid regions"
+                    label="Wybierz prawidłowy region"
                     isMultiSelect={type !== "fixed"}
                     hasSelectAll={type !== "fixed"}
                     enableSearch
@@ -121,12 +123,12 @@ const EditGeneral: React.FC<EditGeneralProps> = ({ discount, onClose }) => {
             />
             <div className="flex gap-x-base gap-y-base my-base">
               <InputField
-                label="Code"
+                label="Kod"
                 className="flex-1"
-                placeholder="SUMMERSALE10"
+                placeholder="FISHING10"
                 required
                 name="code"
-                ref={register({ required: "Code is required" })}
+                ref={register({ required: "Kod jest wymagany" })}
               />
 
               {type !== "free_shipping" && (
@@ -143,13 +145,13 @@ const EditGeneral: React.FC<EditGeneralProps> = ({ discount, onClose }) => {
                           name="value"
                           control={control}
                           rules={{
-                            required: "Amount is required",
+                            required: "Wartość jest wymagana",
                             min: 1,
                           }}
                           render={({ value, onChange }) => {
                             return (
                               <CurrencyInput.AmountInput
-                                label={"Amount"}
+                                label={"Wartość"}
                                 required
                                 amount={value}
                                 onChange={onChange}
@@ -162,7 +164,7 @@ const EditGeneral: React.FC<EditGeneralProps> = ({ discount, onClose }) => {
                   ) : (
                     <div className="flex-1">
                       <InputField
-                        label="Percentage"
+                        label="Procent"
                         min={0}
                         required
                         type="number"
@@ -170,7 +172,7 @@ const EditGeneral: React.FC<EditGeneralProps> = ({ discount, onClose }) => {
                         prefix={"%"}
                         name="value"
                         ref={register({
-                          required: "Percentage is required",
+                          required: "Procent jest wymagany",
                           valueAsNumber: true,
                         })}
                       />
@@ -181,20 +183,17 @@ const EditGeneral: React.FC<EditGeneralProps> = ({ discount, onClose }) => {
             </div>
 
             <div className="text-grey-50 inter-small-regular flex flex-col mb-6">
-              <span>
-                The code your customers will enter during checkout. This will
-                appear on your customer’s invoice.
-              </span>
-              <span>Uppercase letters and numbers only.</span>
+              <span>Kod który klient może wpisać przy zamówieniu.</span>
+              <span>Tylko wielkie litery oraz liczby dozwolone.</span>
             </div>
             <Textarea
-              label="Description"
+              label="Opis"
               required
-              placeholder="Summer Sale 2022"
+              placeholder="Wyprzedaż 2023"
               rows={1}
               name="description"
               ref={register({
-                required: "Description is required",
+                required: "Opis jest wymagany",
               })}
             />
           </Modal.Content>
@@ -207,7 +206,7 @@ const EditGeneral: React.FC<EditGeneralProps> = ({ discount, onClose }) => {
                 type="button"
                 onClick={onClose}
               >
-                Cancel
+                Anuluj
               </Button>
               <Button
                 variant="primary"
@@ -216,7 +215,7 @@ const EditGeneral: React.FC<EditGeneralProps> = ({ discount, onClose }) => {
                 type="submit"
                 loading={isLoading}
               >
-                Save
+                Zapisz
               </Button>
             </div>
           </Modal.Footer>

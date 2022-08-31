@@ -60,7 +60,7 @@ const UpdateBalanceModal = ({
               onClick={handleClose}
               className="mr-2"
             >
-              Cancel
+              Anuluj
             </Button>
             <Button
               loading={updating}
@@ -72,7 +72,7 @@ const UpdateBalanceModal = ({
             >
               {balance > giftCard.value ? (
                 <Tooltip content="Balance is above original value">
-                  Save
+                  Zapisz
                 </Tooltip>
               ) : (
                 "Save"

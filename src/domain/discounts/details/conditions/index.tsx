@@ -23,7 +23,7 @@ const Conditions: React.FC<ConditionsProps> = ({ discount }) => {
         forceDropdown
         actionables={[
           {
-            label: "Add condition",
+            label: "Dodaj warunek",
             icon: <PlusIcon size={16} />,
             onClick: () => setShow(true),
           },

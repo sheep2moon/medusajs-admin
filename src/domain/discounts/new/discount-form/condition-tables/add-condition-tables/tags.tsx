@@ -50,9 +50,9 @@ const AddTagConditionSelector = ({ onClose }: AddConditionSelectorProps) => {
               options={{
                 enableSearch: true,
                 immediateSearchFocus: true,
-                searchPlaceholder: "Search by tag...",
+                searchPlaceholder: "Szukaj po tagach...",
               }}
-              resourceName="Tags"
+              resourceName="Tagi"
               totalCount={count || 0}
               selectedIds={items.map((i) => i.id)}
               data={product_tags}

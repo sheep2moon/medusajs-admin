@@ -36,11 +36,11 @@ const EditTaxRate = ({ modalContext, regionId, taxRate, onDismiss }) => {
 
     updateTaxRate.mutate(toSubmit, {
       onSuccess: () => {
-        notification("Success", "Successfully updated Tax Rate.", "success")
+        notification("Sukces", "Zaktualizowano stawkę podatkową.", "success")
         onDismiss()
       },
       onError: (error) => {
-        notification("Error", getErrorMessage(error), "error")
+        notification("Błąd", getErrorMessage(error), "error")
       },
     })
   }
@@ -188,7 +188,7 @@ const EditTaxRate = ({ modalContext, regionId, taxRate, onDismiss }) => {
               size="medium"
               variant="secondary"
             >
-              <PlusIcon /> Add Overrides
+              <PlusIcon /> Dodaj nadpisania
             </Button>
           )}
         </div>
@@ -202,7 +202,7 @@ const EditTaxRate = ({ modalContext, regionId, taxRate, onDismiss }) => {
             size="small"
             className="w-eventButton justify-center"
           >
-            Cancel
+            Anuluj
           </Button>
           <Button
             type="submit"
@@ -210,7 +210,7 @@ const EditTaxRate = ({ modalContext, regionId, taxRate, onDismiss }) => {
             size="small"
             className="w-eventButton justify-center"
           >
-            Save
+            Zapisz
           </Button>
         </div>
       </Modal.Footer>

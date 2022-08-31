@@ -28,9 +28,9 @@ const SelectShippingMethod = ({
   return (
     <div className="min-h-[705px]">
       <span className="inter-base-semibold">
-        Shipping method{" "}
+        Metoda dostawy{" "}
         <span className="inter-base-regular text-grey-50">
-          (To {region.name})
+          (Do {region.name})
         </span>
       </span>
 
@@ -40,16 +40,14 @@ const SelectShippingMethod = ({
             <AlertIcon size={20} />
           </div>
           <div className="flex flex-col">
-            <span className="inter-small-semibold">Attention!</span>
-            You don't have any options for orders without shipping. Please add
-            one (e.g. "In-store fulfillment") with "Show on website" unchecked
-            in region settings and continue.
+            <span className="inter-small-semibold">Uwaga!</span>
+            Nie masz żadnych opcji realizacji zamówienia bez dostawy.
           </div>
         </div>
       ) : (
         <div className="mt-4">
           <Select
-            label="Choose a shipping method"
+            label="Wybierz metodę dostawy"
             onChange={(so) => {
               handleOptionSelect(so)
               enableNextPage()
@@ -82,7 +80,7 @@ const SelectShippingMethod = ({
                   disabled={!shippingOption}
                   onClick={() => setShowCustomPrice(true)}
                 >
-                  Set custom price
+                  Ustaw własną cenę
                 </Button>
               </div>
             )}
@@ -95,7 +93,7 @@ const SelectShippingMethod = ({
                     currentCurrency={region.currency_code}
                   >
                     <CurrencyInput.AmountInput
-                      label="Custom Price"
+                      label="Własna cena"
                       value={customOptionPrice}
                       onChange={(value) => setCustomOptionPrice(value)}
                     />

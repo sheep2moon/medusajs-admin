@@ -28,22 +28,22 @@ const PromotionType = () => {
             <RadioGroup.Item
               value={DiscountRuleType.PERCENTAGE}
               className="flex-1"
-              label="Percentage"
-              description={"Discount applied in %"}
+              label="Procent"
+              description={"Zniżka na zamówienie w %"}
             />
             <RadioGroup.Item
               value={DiscountRuleType.FIXED}
               className="flex-1"
-              label="Fixed amount"
-              description={"Discount in whole numbers"}
+              label="Konkretna wartość"
+              description={"Zniżka na pewną wartość"}
               disabled={Array.isArray(regions) && regions.length > 1}
-              disabledTooltip="You can only select one valid region if you want to use the fixed amount type"
+              disabledTooltip="Możesz wybrać tylko jeden region"
             />
             <RadioGroup.Item
               value={DiscountRuleType.FREE_SHIPPING}
               className="flex-1"
-              label="Free shipping"
-              description={"Override delivery amount"}
+              label="Darmowa dostawa"
+              description={"Nadpisz cenę dostawy"}
             />
           </RadioGroup.Root>
         )

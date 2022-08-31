@@ -87,11 +87,11 @@ const NewOption = ({ productId, options, onDismiss }) => {
       })
     )
       .then(() => {
-        notification("Success", "Options updated", "success")
+        notification("Sukces", "Opcje zaktualizowane", "success")
         onDismiss()
       })
       .catch((err) => {
-        notification("Error", getErrorMessage(err), "error")
+        notification("Błąd", getErrorMessage(err), "error")
       })
   }
 
@@ -100,7 +100,7 @@ const NewOption = ({ productId, options, onDismiss }) => {
       <form onSubmit={onSubmit}>
         <Modal.Body>
           <Modal.Header handleClose={onDismiss}>
-            <h2>Add Option</h2>
+            <h2>Dodaj opcje</h2>
           </Modal.Header>
           <Modal.Content>
             {toSave.map(
@@ -120,7 +120,7 @@ const NewOption = ({ productId, options, onDismiss }) => {
             )}
             <div className="flex w-full justify-end mt-4">
               <Button size="small" variant="secondary" onClick={onAddOption}>
-                + Add option
+                + Dodaj opcje
               </Button>
             </div>
           </Modal.Content>
@@ -132,10 +132,10 @@ const NewOption = ({ productId, options, onDismiss }) => {
                 size="large"
                 onClick={onDismiss}
               >
-                Cancel
+                Anuluj
               </Button>
               <Button type="submit" variant="primary">
-                Save
+                Zapisz
               </Button>
             </div>
           </Modal.Footer>

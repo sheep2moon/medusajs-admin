@@ -103,7 +103,7 @@ const DiscountFilters = ({
         }
       >
         <FilterDropdownItem
-          filterTitle="Types"
+          filterTitle="Typy"
           options={dynamicFilters}
           filters={tempState.isDynamic.filter}
           open={tempState.isDynamic.open}

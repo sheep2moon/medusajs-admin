@@ -103,7 +103,7 @@ const PriceListsFilter = ({
           setFilter={(v) => setSingleFilter("status", v)}
         />
         <FilterDropdownItem
-          filterTitle="Type"
+          filterTitle="Typ"
           options={typeFilters}
           filters={tempState.type.filter}
           open={tempState.type.open}

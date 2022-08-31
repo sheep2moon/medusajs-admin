@@ -142,7 +142,7 @@ const Exchange: React.FC<ExchangeProps> = ({ event, refetch }) => {
     Medusa.orders
       .processSwapPayment(event.orderId, event.id)
       .then((_res) => {
-        notification("Success", "Payment processed successfully", "success")
+        notification("Sukces", "Płatność przetworzona pomyślnie", "success")
         refetch()
       })
       .catch((err) => {
@@ -157,7 +157,7 @@ const Exchange: React.FC<ExchangeProps> = ({ event, refetch }) => {
 
   if (event.paymentStatus === "awaiting") {
     actions.push({
-      label: "Capture payment",
+      label: "Przechwyć płatność",
       icon: <DollarSignIcon size={20} />,
       onClick: handleProcessSwapPayment,
     })
@@ -165,7 +165,7 @@ const Exchange: React.FC<ExchangeProps> = ({ event, refetch }) => {
 
   if (event.returnStatus === "requested") {
     actions.push({
-      label: "Cancel return",
+      label: "Anuluj zwrot",
       icon: <TruckIcon size={20} />,
       onClick: () => setShowCancelReturn(!showCancelReturn),
     })
@@ -178,7 +178,7 @@ const Exchange: React.FC<ExchangeProps> = ({ event, refetch }) => {
     event.fulfillmentStatus !== "shipped"
   ) {
     actions.push({
-      label: "Cancel exchange",
+      label: "Anuluj wymiane",
       icon: <CancelIcon size={20} />,
       onClick: () => setShowCancel(!showCancel),
       variant: "danger",
@@ -186,7 +186,7 @@ const Exchange: React.FC<ExchangeProps> = ({ event, refetch }) => {
   }
 
   const args = {
-    title: event.canceledAt ? "Exchange Cancelled" : "Exchange Requested",
+    title: event.canceledAt ? "Wymiana anulowana" : "Żądanie wymiany",
     icon: event.canceledAt ? (
       <CancelIcon size={20} />
     ) : (
@@ -220,7 +220,7 @@ const Exchange: React.FC<ExchangeProps> = ({ event, refetch }) => {
               size="small"
               onClick={() => setShowReceiveReturn(true)}
             >
-              Receive Return
+              Otrzymaj zwrot
             </Button>
           )}
           {event.fulfillmentStatus === "not_fulfilled" && (
@@ -229,7 +229,7 @@ const Exchange: React.FC<ExchangeProps> = ({ event, refetch }) => {
               size="small"
               onClick={() => setShowCreateFulfillment(true)}
             >
-              Fulfill Exchange
+              Zrealizuj wymiane
             </Button>
           )}
         </div>
@@ -243,20 +243,20 @@ const Exchange: React.FC<ExchangeProps> = ({ event, refetch }) => {
         <DeletePrompt
           handleClose={() => setShowCancel(!showCancel)}
           onDelete={handleCancelExchange}
-          confirmText="Yes, cancel"
-          heading="Cancel exchange"
-          text="Are you sure you want to cancel this exchange?"
-          successText="Exchange cancelled"
+          confirmText="Tak, anuluj"
+          heading="Anuluj wymianę"
+          text="Napewno chcesz anulować tę wymianę?"
+          successText="Wymiana anulowana"
         />
       )}
       {showCancelReturn && (
         <DeletePrompt
           handleClose={() => setShowCancelReturn(!showCancelReturn)}
           onDelete={handleCancelReturn}
-          confirmText="Yes, cancel"
-          heading="Cancel return"
-          text="Are you sure you want to cancel this return?"
-          successText="Return cancelled"
+          confirmText="Tak, anuluj"
+          heading="Anuluj zwrot"
+          text="Napewno chcesz anulować ten zwrot?"
+          successText="Zwrot anulowany"
         />
       )}
       {showReceiveReturn && order && (
@@ -301,7 +301,7 @@ function getPaymentLink(
     <div className="inter-small-regular text-grey-50 flex flex-col gap-y-xsmall">
       <div className="flex items-center gap-x-xsmall">
         {paymentFormatWarning && <IconTooltip content={paymentFormatWarning} />}
-        <span>Payment link:</span>
+        <span>Link do płatności:</span>
       </div>
       {differenceCardId && (
         <CopyToClipboard
@@ -316,7 +316,9 @@ function getPaymentLink(
 function getReturnItems(event: ExchangeEvent) {
   return (
     <div className="flex flex-col gap-y-small">
-      <span className="inter-small-regular text-grey-50">Return Items</span>
+      <span className="inter-small-regular text-grey-50">
+        Zwracane przedmioty
+      </span>
       <div>
         {event.returnItems.map((i) => (
           <EventItemContainer item={{ ...i, quantity: i.requestedQuantity }} />

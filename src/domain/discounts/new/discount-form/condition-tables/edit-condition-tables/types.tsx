@@ -48,9 +48,9 @@ const EditTypeConditionSelector = ({ onClose }) => {
               options={{
                 enableSearch: true,
                 immediateSearchFocus: true,
-                searchPlaceholder: "Search by type...",
+                searchPlaceholder: "Szukaj po typie...",
               }}
-              resourceName="Types"
+              resourceName="Typy"
               totalCount={count || 0}
               selectedIds={items?.map((c) => c.id)}
               data={product_types}
