@@ -183,7 +183,7 @@ const AmountInput: React.FC<AmountInputProps> = ({
     }
 
     if (currencyInfo) {
-      const amount = parseFloat(value)
+      const amount = parseFloat(value.replace(",", "."))
       const multiplier = getDecimalDigits(currencyInfo.code)
       persistedAmount = multiplier * amount
     }
