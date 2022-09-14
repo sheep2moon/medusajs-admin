@@ -188,8 +188,12 @@ const AmountInput: React.FC<AmountInputProps> = ({
       persistedAmount = multiplier * amount
     }
 
+    console.log("poka", { value, persistedAmount, amount })
+
     if (onChange && typeof persistedAmount !== "undefined") {
       const updateAmount = Math.round(persistedAmount)
+      console.log({ updateAmount })
+
       let update = true
       if (onValidate) {
         update = onValidate(updateAmount)
