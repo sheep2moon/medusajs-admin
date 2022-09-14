@@ -89,10 +89,13 @@ const VariantEditor = ({
       data.title = data.options.map((o) => o.value).join(" / ")
     }
 
-    data.prices = data.prices.map(({ price: { currency_code, amount } }) => ({
-      currency_code,
-      amount: Math.round(amount),
-    }))
+    data.prices = data.prices.map(({ price: { currency_code, amount } }) => {
+      console.log(currency_code, amount)
+      return {
+        currency_code,
+        amount: Math.round(amount),
+      }
+    })
     data.options = data.options.map((option) => ({ ...option }))
 
     data.origin_country = selectedCountry?.label

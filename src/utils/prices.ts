@@ -3,6 +3,7 @@ import { currencies } from "./currencies"
 
 export function normalizeAmount(currency: string, amount: number): number {
   const divisor = getDecimalDigits(currency)
+  console.log(amount, divisor)
   return Math.floor(amount) / divisor
 }
 
