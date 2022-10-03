@@ -36,7 +36,7 @@ const General = ({ showViewOptions = true, isEdit = false, product }) => {
     setValue,
   } = useProductForm()
   const { product_types } = useAdminProductTypes(undefined, { cacheTime: 0 })
-  const { collections } = useAdminCollections()
+  const { collections } = useAdminCollections({ limit: 99, offset: 0 })
 
   const typeOptions =
     product_types?.map((tag) => ({ label: tag.value, value: tag.id })) || []
